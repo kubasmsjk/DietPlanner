@@ -1,0 +1,181 @@
+:host(){
+    display: flex;
+    margin-top:3%;
+    justify-content:center; 
+    align-items:center;
+}
+
+.container{
+    border-radius: 6px 6px 6px 6px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    width: 26%;
+}
+form{
+    font-family: Helvetica;
+    padding: 12px;
+}
+.topic-header{
+    font-size: 16px;
+}
+.form-group{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 2px;
+        font-size: 15px;
+        
+
+}
+.form-control{
+    padding: 3px;
+    font-size: 12px;
+    border-width: 0px;
+    border-color: #CCCCCC;
+    background-color: #3196da47;
+    color: #000000bf;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: 1px 0px 6px rgba(66,66,66,.75);
+}
+.form-control:focus {
+    outline:none;
+}
+
+/* checbox */
+
+.b-contain *,
+.b-contain *::before,
+.b-contain *::after {
+  box-sizing: content-box !important;
+}
+
+.b-contain input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.b-contain span {
+  line-height: 1.5;
+  font-size: 0.80rem;
+  font-family: inherit;
+}
+
+.b-contain {
+  display: table;
+  position: relative;
+  padding-left: 1.3rem;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+}
+.b-contain,label,input{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+}
+.b-contain input[type="checkbox"] ~ .b-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.9rem;
+  width: 0.9rem;
+  background: #f1f5f9;
+  transition: background 250ms;
+  border: 1px solid #94a3b8;
+  border-radius: 0.86rem;
+}
+
+.b-contain input[type="checkbox"] ~ .b-input::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 3px;
+  width: 0.22rem;
+  height: 0.39rem;
+  border: solid rgb(0, 0, 0);
+  border-width: 0 1px 1px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+.b-contain input[type="checkbox"]:disabled ~ .b-input::after {
+  border-color: #ffffff;
+}
+
+.b-contain input:checked ~ .b-input::after {
+  display: block;
+}
+
+.b-contain:hover input[type="checkbox"]:not([disabled]) ~ .b-input,
+.b-contain input[type="checkbox"]:focus ~ .b-input {
+  background: #e2e8f0;
+  border-color: #64748b;
+}
+
+.b-contain input:focus ~ .b-input {
+  box-shadow: 0 0 0 2px #60a5fa;
+}
+
+.b-contain input[type="checkbox"]:checked ~ .b-input {
+  background: rgb(255, 177, 51);
+  border-color: rgb(254, 216, 53);
+}
+
+.b-contain input[type="checkbox"]:disabled ~ .b-input{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.b-contain:hover input[type="checkbox"]:not([disabled]):checked ~ .b-input,
+.b-contain input[type="checkbox"]:checked:focus ~ .b-input {
+  background: rgb(254, 216, 53);
+  border-color: #ffeb3c;
+}
+
+/* select */
+
+.select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+} 
+.select select {
+        font-family: 'Arial';
+        display: inline-block;
+        cursor: pointer;
+        padding: 8px 13px;
+        border: 0px solid #000000;
+        border-radius: 15px;
+        background: #e3e55ec7;
+        color: #000000 ;
+}
+
+/* button */
+
+.btn{
+    background: linear-gradient(to right,#ffb133 ,#6439d0);
+    background-color: #ffb133;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 14px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 8px 11px;
+    margin: 5px;
+    border: 0px solid #000;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    left: 20%;
+   }
+.btn:hover{
+ background: linear-gradient(to right,#ffba5e ,#7d61d5);
+ background-color: #ffba5e;
+}
+.btn:active{
+ transform: scale(0.95);
+}
