@@ -1,0 +1,57 @@
+<div class="container">
+    <h1>HEHEHE</h1>
+    <form (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="gainWeight"></label>Chcę przytyć:<br>
+            <input type="checkbox" name="gainWeight" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="loseWeight"></label>Chcę schudnąć:<br>
+            <input type="checkbox" name="loseWeight" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="keepWeight"></label>Chcę utrzymać formę:<br>
+            <input type="checkbox" name="keepWeight" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="diet">Interesuję mnie dieta:</label>
+            <select name="diet" id="diet" ngModel>
+              <option value="basicDiet">Podstawowa</option>
+              <option value="vegeDiet">Wegańska</option>
+              <option value="highProteinDiet">Wysoko białkowa</option>
+            </select>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="weight"></label>Waga:<br>
+            <input type="input" name="weight" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="height"></label>Wzrost:<br>
+            <input type="input" name="height" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="sex">Płeć:</label>
+            <select name="sex" id="sex" ngModel>
+              <option value="male">Mężczyzna</option>
+              <option value="female">Kobieta</option>
+            </select>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="trainingExperience">Staż treningowy:</label>
+            <select name="trainingExperience" id="trainingExperience" ngModel>
+              <option value="noTraining">Nie ćwiczę lub rzadko</option>
+              <option value="mediumTraining">Lekko ćwiczę</option>
+              <option value="hardTraining">Regularnie ćwiczę</option>
+            </select>
+        </div>
+        <pre></pre>
+        <button class="btn btn-primary" type ="submit">Potwierdź</button>
+    </form>
+</div>
