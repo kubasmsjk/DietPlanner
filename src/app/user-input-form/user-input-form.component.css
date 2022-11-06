@@ -43,7 +43,7 @@ form{
     outline:none;
 }
 
-/* checbox */
+/* radio */
 
 .b-contain *,
 .b-contain *::before,
@@ -59,79 +59,80 @@ form{
 
 .b-contain span {
   line-height: 1.5;
-  font-size: 0.80rem;
+  font-size: 0.8rem;
   font-family: inherit;
 }
 
 .b-contain {
   display: table;
   position: relative;
-  padding-left: 1.3rem;
+  padding-left: 1.36rem;
   cursor: pointer;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1.84rem;
 }
+
 .b-contain,label,input{
     display: inline-block;
     vertical-align: middle;
     margin: 2px;
 }
-.b-contain input[type="checkbox"] ~ .b-input {
+
+.b-contain input[type="radio"] ~ .b-input {
   position: absolute;
   top: 0;
   left: 0;
-  height: 0.9rem;
-  width: 0.9rem;
+  height: 0.7rem;
+  width: 0.7rem;
   background: #f1f5f9;
   transition: background 250ms;
   border: 1px solid #94a3b8;
-  border-radius: 0.86rem;
+  border-radius: 3rem;
 }
 
-.b-contain input[type="checkbox"] ~ .b-input::after {
+.b-contain input[type="radio"] ~ .b-input::after {
   content: "";
   position: absolute;
   display: none;
-  left: 5px;
-  top: 3px;
-  width: 0.22rem;
-  height: 0.39rem;
-  border: solid rgb(0, 0, 0);
-  border-width: 0 1px 1px 0;
+  left: 2px;
+  top: 2px;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 3rem;
+  background: rgb(131, 198, 131);
   transition: background 250ms;
-  transform: rotate(45deg);
-}
-
-.b-contain input[type="checkbox"]:disabled ~ .b-input::after {
-  border-color: #ffffff;
 }
 
 .b-contain input:checked ~ .b-input::after {
   display: block;
 }
 
-.b-contain:hover input[type="checkbox"]:not([disabled]) ~ .b-input,
-.b-contain input[type="checkbox"]:focus ~ .b-input {
-  background: #e2e8f0;
+.b-contain:hover input[type="radio"]:not([disabled]) ~ .b-input,
+.b-contain input[type="radio"]:focus ~ .b-input {
+  background: rgb(255, 255, 255);
   border-color: #64748b;
 }
 
 .b-contain input:focus ~ .b-input {
-  box-shadow: 0 0 0 2px #60a5fa;
+  box-shadow: 0 0 0 2px rgb(252, 192, 46);
 }
 
-.b-contain input[type="checkbox"]:checked ~ .b-input {
-  background: rgb(255, 177, 51);
-  border-color: rgb(254, 216, 53);
+.b-contain input[type="radio"]:checked ~ .b-input {
+  background: #fed835;
+  border-color: #ffeb3c;
 }
 
-.b-contain input[type="checkbox"]:disabled ~ .b-input{
+.b-contain input[type="radio"]:disabled ~ .b-input {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.b-contain:hover input[type="checkbox"]:not([disabled]):checked ~ .b-input,
-.b-contain input[type="checkbox"]:checked:focus ~ .b-input {
-  background: rgb(254, 216, 53);
+.b-contain input[type="radio"]:disabled ~ .b-input::after {
+  background: #ffffff;
+}
+
+.b-contain:hover input[type="radio"]:not([disabled]):checked ~ .b-input,
+.b-contain input[type="radio"]:checked:focus ~ .b-input {
+  background: #fed835;
   border-color: #ffeb3c;
 }
 
