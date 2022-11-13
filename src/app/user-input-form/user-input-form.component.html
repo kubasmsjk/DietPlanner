@@ -1,14 +1,14 @@
 <div class="container">
-    <form (ngSubmit)="submit()">
+    <form [formGroup]="myForm" (ngSubmit)="submit()"><!-- -->
         <h1 class="topic-header">Jaka kaloryczność jest odpowiednia dla Ciebie?</h1>
-            <div class="radio">
+            <div class="radio" ><!--formControlName="radio1"-->
                     <label class="b-contain">
-                        <span>Chcę przytyć</span>
-                        <input name="radio" type="radio"/>
+                        <span>Chcę schudnąć</span>
+                        <input name="radio" type="radio" checked/>
                         <div class="b-input"></div>
                     </label>
                     <label class="b-contain">
-                        <span>Chcę schudnąć</span>
+                        <span>Chcę przytyć</span>
                         <input name="radio" type="radio" />
                         <div class="b-input"></div>
                     </label>
@@ -19,10 +19,10 @@
                     </label>
             </div>
         <h1 class="topic-header">Jaką dietę chcesz wybrać?</h1>
-            <div class="select">
+            <div class="select" >
                 <label>Interesuję mnie dieta:</label>
-                    <select id="diet" ngModel>
-                      <option value="basicDiet">Podstawowa</option>
+                    <select id="diet">
+                      <option value="basicDiet" selected>Podstawowa</option>
                       <option value="vegeDiet">Wegańska</option>
                       <option value="highProteinDiet">Wysoko białkowa</option>
                     </select>
@@ -30,22 +30,31 @@
         <h1 class="topic-header">Ile masz wzrostu i ile ważysz?</h1>
             <div class="form-group">
                 <label for="weight"></label>Waga
-                <input type="number" name="weight" class="form-control" placeholder="0" value="0" min="0" max="200" step="1" ngModel>
+                <input type="number" name="weight" class="form-control" placeholder="0" value="0" step="1" formControlName="weight">
+                <div *ngIf="myForm.controls['weight'].errors">
+                    Waga musi być pomiędzy 20 a 200.
+                </div>
             </div>
             <div class="form-group">
                 <label for="height"></label>Wzrost
-                <input type="number" name="height" class="form-control" placeholder="0" value="0" min="0" max="200" step="1" ngModel>
+                <input type="number" name="height" class="form-control" placeholder="0" value="0" step="1" formControlName="height">
+                <div *ngIf="myForm.controls['height'].errors">
+                    Wzrost musi być pomiędzy 140 a 220.
+                </div>
             </div>
         <h1 class="topic-header">Ile masz lat a ile ćwiczysz?</h1>
             <div class="form-group">
                 <label for="age"></label>Wiek:
-                <input type="number" name="age" class="form-control" placeholder="0" value="0" min="0" max="100" step="1" ngModel>
+                <input type="number" name="age" class="form-control" placeholder="0" value="0" step="1" formControlName="age">
+                <div *ngIf="myForm.controls['age'].errors">
+                    Wiek musi być pomiędzy 10 a 80
+                </div>
             </div>
             <div class="form-group">
                 <div class="select">
                 <label>Staż treningowy:</label>
-                <select id="trainingExperience" ngModel>
-                  <option value="noTraining">Nie ćwiczę lub rzadko</option>
+                <select id="trainingExperience">
+                  <option value="noTraining" selected>Nie ćwiczę lub rzadko</option>
                   <option value="mediumTraining">Lekko ćwiczę</option>
                   <option value="hardTraining">Regularnie ćwiczę</option>
                 </select>
@@ -55,8 +64,8 @@
             <div class="form-group">
                 <div class="select">
                 <label>Płeć:</label>
-                <select id="sex" ngModel>
-                  <option value="male">Mężczyzna</option>
+                <select id="sex">
+                  <option value="male" selected>Mężczyzna</option>
                   <option value="female">Kobieta</option>
                 </select>
                 </div>
