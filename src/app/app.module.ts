@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserInputFormComponent } from './user-input-form/user-input-form.component';
+import { DietTableComponent } from './diet-table/diet-table.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { UserInputFormComponent } from './user-input-form/user-input-form.compon
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    UserInputFormComponent
+    UserInputFormComponent,
+    DietTableComponent
   ],
   imports: [
     BrowserModule,
