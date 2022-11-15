@@ -1,0 +1,30 @@
+table.customTable {
+    margin-top:5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: #FFFFFF;
+    border-width: 2px;
+    border-color: #6bb313;
+    border-style: solid;
+    color: #000000;
+    border-radius: 6px 6px 6px 6px;
+    border-collapse: separate;
+    -webkit-box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    font-family: Helvetica;
+
+
+  }
+  table.customTable td, table.customTable th {
+    
+    border-width: 2px;
+    border-color: #6bb313;
+    border-style: solid;
+    padding: 5px;
+  }
+  
+  table.customTable thead {
+    background-color: #f0f40b;
+  }
