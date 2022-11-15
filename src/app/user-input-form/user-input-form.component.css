@@ -1,0 +1,183 @@
+:host(){
+    display: flex;
+    margin-top:1%;
+    justify-content:center; 
+    align-items:center;
+}
+
+.container{
+    border-radius: 6px 6px 6px 6px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    width: 26%;
+}
+form{
+    font-family: Helvetica;
+    padding: 12px; 
+}
+.topic-header{
+    font-size: 16px;
+}
+.form-group{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 2px;
+        font-size: 15px;
+        width: 45%;
+        
+}
+
+.form-control{
+    padding: 3px;
+    font-size: 12px;
+    border-width: 0px;
+    border-color: #CCCCCC;
+    background-color: #3196da47;
+    color: #000000bf;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: 1px 0px 6px rgba(66,66,66,.75);
+}
+.form-control:focus {
+    outline:none;
+}
+
+/* radio */
+
+.b-contain *,
+.b-contain *::before,
+.b-contain *::after {
+  box-sizing: content-box !important;
+}
+
+.b-contain input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.b-contain span {
+  line-height: 1.5;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.b-contain {
+  display: table;
+  position: relative;
+  padding-left: 1.36rem;
+  cursor: pointer;
+  margin-bottom: 1.84rem;
+}
+
+.b-contain,label,input{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+}
+
+.b-contain input[type="radio"] ~ .b-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.7rem;
+  width: 0.7rem;
+  background: #f1f5f9;
+  transition: background 250ms;
+  border: 1px solid #94a3b8;
+  border-radius: 3rem;
+}
+
+.b-contain input[type="radio"] ~ .b-input::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 2px;
+  top: 2px;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 3rem;
+  background: rgb(131, 198, 131);
+  transition: background 250ms;
+}
+
+.b-contain input:checked ~ .b-input::after {
+  display: block;
+}
+
+.b-contain:hover input[type="radio"]:not([disabled]) ~ .b-input,
+.b-contain input[type="radio"]:focus ~ .b-input {
+  background: rgb(255, 255, 255);
+  border-color: #64748b;
+}
+
+.b-contain input:focus ~ .b-input {
+  box-shadow: 0 0 0 2px rgb(252, 192, 46);
+}
+
+.b-contain input[type="radio"]:checked ~ .b-input {
+  background: #fed835;
+  border-color: #ffeb3c;
+}
+
+.b-contain input[type="radio"]:disabled ~ .b-input {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.b-contain input[type="radio"]:disabled ~ .b-input::after {
+  background: #ffffff;
+}
+
+.b-contain:hover input[type="radio"]:not([disabled]):checked ~ .b-input,
+.b-contain input[type="radio"]:checked:focus ~ .b-input {
+  background: #fed835;
+  border-color: #ffeb3c;
+}
+
+/* select */
+
+.select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+} 
+.select select {
+        font-family: 'Arial';
+        display: inline-block;
+        cursor: pointer;
+        padding: 8px 13px;
+        border: 0px solid #000000;
+        border-radius: 15px;
+        background: #e3e55ec7;
+        color: #000000 ;
+}
+
+/* button */
+
+.btn{
+    background: linear-gradient(to right,#ffb133 ,#6439d0);
+    background-color: #ffb133;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 14px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 8px 11px;
+    margin: 5px;
+    border: 0px solid #000;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    left: 20%;
+   }
+.btn:hover{
+ background: linear-gradient(to right,#ffba5e ,#7d61d5);
+ background-color: #ffba5e;
+}
+.btn:active{
+ transform: scale(0.95);
+}
