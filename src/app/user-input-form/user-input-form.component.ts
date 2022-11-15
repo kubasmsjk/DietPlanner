@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, Validators } from '@angular/forms';
+import {FormBuilder, FormControl, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -9,6 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-input-form.component.css']
 })
 export class UserInputFormComponent implements OnInit {
+
+
+  weightChoose = 'loseWeight'
+  dietType = 'basicDiet'
+  trainingExperience = 'mediumTraining'
+  sex = 'male'
+  weight = 0
+  height = 0
+  age = 1
 
   myForm = this.fb.group({
     weight: new FormControl('', [Validators.min(20), Validators.max(200)]),
@@ -21,8 +30,16 @@ export class UserInputFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(){
+  userInput(formValue: NgForm) {
     this.router.navigateByUrl('/diet-planner');
+    console.log(formValue.value)
+    
   }
+
+
+  //submit(){
+  //  
+  //  this.router.navigateByUrl('/diet-planner');
+  //}
 
 }
