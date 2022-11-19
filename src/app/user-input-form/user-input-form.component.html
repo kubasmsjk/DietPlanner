@@ -1,28 +1,28 @@
 <div class="container">
-    <form  #userInputForm="ngForm" (submit)="userInput(userInputForm)"><!-- -->
+    <form [formGroup]="myForm" (ngSubmit)="submit()" ><!-- -->
         <h1 class="topic-header">Jaka kaloryczność jest odpowiednia dla Ciebie?</h1>
             <div class="radio" ><!--formControlName="radio1"-->
                     <label class="b-contain">
                         <span>Chcę schudnąć</span>
-                        <input value = "loseWeight" [(ngModel)]="weightChoose" name="weightChoose" type="radio" >
+                        <input value="loseWeight" name="radio" type="radio" checked ngModel>
                         <div class="b-input"></div>
                     </label>
                     <label class="b-contain">
                         <span>Chcę przytyć</span>
-                        <input value = "gainWeight" [(ngModel)]="weightChoose" name="weightChoose" type="radio" >
+                        <input value="gainWeight" name="radio" type="radio" ngModel>
                         <div class="b-input"></div>
                     </label>
                     <label class="b-contain">
                         <span>Chcę utrzymać formę</span>
-                        <input value = "keepWeight" [(ngModel)]="weightChoose" name="weightChoose" type="radio" >
+                        <input name="radio" type="radio" ngModel>
                         <div class="b-input"></div>
                     </label>
             </div>
         <h1 class="topic-header">Jaką dietę chcesz wybrać?</h1>
             <div class="select" >
                 <label>Interesuję mnie dieta:</label>
-                    <select [(ngModel)]="dietType" name="customerType" >
-                      <option value="basicDiet">Podstawowa</option>
+                    <select id="diet">
+                      <option value="basicDiet" selected>Podstawowa</option>
                       <option value="vegeDiet">Wegańska</option>
                       <option value="highProteinDiet">Wysoko białkowa</option>
                     </select>
@@ -31,13 +31,13 @@
             <div>
                 <div class="form-group">
                     <label for="weight"></label>Waga
-                    <input type="number" [(ngModel)]="weight"  name="weight" class="form-control" placeholder="0" value="0" step="1" >
+                    <input type="number" name="weight" class="form-control" placeholder="0" value="0" step="1" formControlName="weight">
                 
                 </div>
         
                 <div class="form-group">
                     <label for="height"></label>Wzrost
-                    <input type="number" [(ngModel)]="height" name="height" class="form-control" placeholder="0" value="0" step="1" >
+                    <input type="number" name="height" class="form-control" placeholder="0" value="0" step="1" formControlName="height">
                 </div>
             </div>
             <div *ngIf="myForm.controls['weight'].errors">
@@ -50,13 +50,13 @@
             <div>
                 <div class="form-group">
                     <label for="age"></label>Wiek:
-                    <input type="number" [(ngModel)]="age" name="age" class="form-control" placeholder="0" value="0" step="1" >
+                    <input type="number" name="age" class="form-control" placeholder="0" value="0" step="1" formControlName="age">
                 </div>
                 <div class="form-group">
                     <div class="select">
                     <label>Staż treningowy:</label>
-                    <select [(ngModel)]="trainingExperience" name="trainingExperience" >
-                      <option value="noTraining" >Nie ćwiczę lub rzadko</option>
+                    <select id="trainingExperience">
+                      <option value="noTraining" selected>Nie ćwiczę lub rzadko</option>
                       <option value="mediumTraining">Lekko ćwiczę</option>
                       <option value="hardTraining">Regularnie ćwiczę</option>
                     </select>
@@ -70,8 +70,8 @@
             <div class="form-group">
                 <div class="select">
                 <label>Płeć:</label>
-                <select [(ngModel)]="sex" name="sex">
-                  <option value="male">Mężczyzna</option>
+                <select id="sex">
+                  <option value="male" selected>Mężczyzna</option>
                   <option value="female">Kobieta</option>
                 </select>
                 </div>
