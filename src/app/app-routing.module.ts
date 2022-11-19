@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/user-form', pathMatch: 'full' },
   {path: '',component:BodyComponent, children: [
     { path: 'user-form' ,component: UserInputFormComponent},
-    { path: 'diet-planner', component: DietTableComponent }
+    { path: 'diet-planner/:firstName', component: DietTableComponent}
   ]}
 ];
 
