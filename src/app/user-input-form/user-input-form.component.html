@@ -86,6 +86,6 @@
         <button class="btn" type ="submit" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
     </form>
 </div>
-<div>
-    <img *ngIf="!formModel.valid" src="../../assets/banan.png" width="250px" height="auto">
+<div id="help-banan-image-div">
+    <img id="help-banan-image" *ngIf="!formModel.valid" src="../../assets/banan.png" width="250px" height="auto" alt="banan-image">
 </div>
