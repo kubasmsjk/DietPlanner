@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, Validators } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -9,14 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-input-form.component.css']
 })
 export class UserInputFormComponent implements OnInit {
+  formModel: FormGroup;
 
-  myForm = this.fb.group({
-    weight: new FormControl('', [Validators.min(20), Validators.max(200)]),
-    height: new FormControl('', [Validators.min(140), Validators.max(220)]),
-    age: new FormControl('', [Validators.min(10), Validators.max(80)])
-  })
+  constructor(private fb: FormBuilder,private router: Router) {
 
-  constructor(private fb: FormBuilder,private router: Router) { }
+    this.formModel = new FormGroup({
+      weight: new FormControl('', [Validators.required, Validators.min(20), Validators.max(200)]),
+      height: new FormControl('', [Validators.required, Validators.min(140), Validators.max(220)]),
+      age: new FormControl('', [Validators.required, Validators.min(10), Validators.max(80)])
+    })
+
+   }
 
   ngOnInit(): void {
   }
