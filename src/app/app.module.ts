@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -12,6 +13,7 @@ import { UserInputFormComponent } from './user-input-form/user-input-form.compon
 import { DietTableComponent } from './diet-table/diet-table.component';
 import { CreateDietComponent } from './create-diet/create-diet.component';
 import { GrayedDirective } from './user-input-form/grayed.directive';
+import { MealsDataBaseComponent } from './meals-data-base/meals-data-base.component';
 
 
 @NgModule({
@@ -23,13 +25,15 @@ import { GrayedDirective } from './user-input-form/grayed.directive';
     UserInputFormComponent,
     DietTableComponent,
     CreateDietComponent,
-    GrayedDirective
+    GrayedDirective,
+    MealsDataBaseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
