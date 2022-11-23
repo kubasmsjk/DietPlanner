@@ -10,6 +10,8 @@ export class DietTableComponent implements OnInit {
 
   firstName!: string | null;
 
+  weekDays = ["poniedzialek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela"];
+
   constructor(private route: ActivatedRoute) { 
   }
 

@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserInputFormComponent } from './user-input-form/user-input-form.component';
 import { DietTableComponent } from './diet-table/diet-table.component';
 import { CreateDietComponent } from './create-diet/create-diet.component';
+import { GrayedDirective } from './directives/grayed.directive';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CreateDietComponent } from './create-diet/create-diet.component';
     FooterComponent,
     UserInputFormComponent,
     DietTableComponent,
-    CreateDietComponent
+    CreateDietComponent,
+    GrayedDirective
   ],
   imports: [
     BrowserModule,

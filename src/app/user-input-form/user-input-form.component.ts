@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class UserInputFormComponent implements OnInit {
   formModel: FormGroup;
-
   constructor(private router: Router) {
 
     this.formModel = new FormGroup({

@@ -3,13 +3,7 @@
     <thead>
       <tr>
         <th></th>
-        <th>Poniedziałek</th>
-        <th>Wtorek</th>
-        <th>Środa</th>
-        <th>Czwartek</th>
-        <th>Piątek</th>
-        <th>Sobota</th>
-        <th>Niedziela</th>
+        <th *ngFor="let day of weekDays">{{ day | uppercase}}</th>
       </tr>
     </thead>
     <tbody>

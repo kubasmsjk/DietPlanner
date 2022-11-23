@@ -83,7 +83,7 @@
                         </select>
                 </div>
             </div><br>
-        <button class="btn" type ="submit" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
+        <button class="btn" type ="submit" appGrayed [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
     </form>
 </div>
 <div id="help-banan-image-div">
