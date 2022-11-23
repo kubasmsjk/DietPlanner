@@ -4,6 +4,9 @@
             <div class="form-group">
                 <input name="firstName" type="text" class="form-control" placeholder="Podaj swoje imię" value="firstName" formControlName = "firstName">
             </div>
+            <div *ngIf="formModel.controls['firstName'].errors && formModel.controls['firstName']?.touched">
+                Imię musi składać się z liter.
+            </div>
         <h1 class="topic-header">Jaka kaloryczność jest odpowiednia dla Ciebie?</h1>
             <div class="radio" ><!--formControlName="radio1"-->
                     <label class="b-contain">
@@ -83,7 +86,7 @@
                         </select>
                 </div>
             </div><br>
-        <button class="btn" type ="submit" appGrayed [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
+        <button class="btn" type ="submit" appGrayed [isformValid]="formModel.valid" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
     </form>
 </div>
 <div id="help-banan-image-div">

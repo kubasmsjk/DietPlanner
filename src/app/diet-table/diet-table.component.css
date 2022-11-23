@@ -3,7 +3,9 @@
   font-family: 'Bungee Shade', sans-serif;
   font-size: 35px;
   text-align: center ;
-  background: -webkit-linear-gradient( #fbbc00, #d7e116);
+  background: -webkit-linear-gradient(45deg, #39a8df, #e9d41b);
+  border-top: 3px solid #000000;
+  border-bottom: 3px solid #000000;
 }
 td:nth-child(even) {background: rgb(255, 255, 255)}
 td:nth-child(even) {background: rgba(251, 255, 0, 0.171)}
