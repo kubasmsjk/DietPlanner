@@ -44,8 +44,8 @@
             
             <h1 class="topic-header">Ile masz wzrostu i ile ważysz?</h1>
             <div>
-                <input type="number" placeholder="Podaj swoją wagę" step="1" formControlName="weight">
-                <input type="number" placeholder="Podaj swój wzrost" step="1" formControlName="height">  
+                <input type="number" placeholder="Podaj swoją wagę 'kg'" step="1" formControlName="weight">
+                <input type="number" placeholder="Podaj swój wzrost 'cm'" step="1" formControlName="height">  
             </div>
             <div *ngIf="formModel.controls['weight'].errors && formModel.controls['weight']?.touched">
                 Waga musi być pomiędzy 20 a 200.

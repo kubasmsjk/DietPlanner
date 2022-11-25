@@ -11,7 +11,7 @@
 
 .leftSection {
   display: flex;
-  margin-left: auto;
+  margin-left: 32%;
   align-items: center;
 }
 
@@ -45,7 +45,7 @@ input {
   border: none;
   border-bottom: 1px solid #D5BA5E;
   outline: none;
-  font-size: 1em;
+  font-size: 0.9em;
   margin: 3%;
 }
 
@@ -64,8 +64,8 @@ input {
 
 .topic-header {
   display: inline-block;
-  font-family: 'Trebuchet MS', sans-serif;
-  font-size: 1.1em;
+  font-family: 'Patrick Hand';
+  font-size: 1.3em;
   margin: 1%;
   padding: 0.5%;
 }
@@ -120,7 +120,7 @@ input {
 }
 label {
   font-family: 'Trebuchet MS', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 /* select */
 
@@ -133,7 +133,7 @@ select {
      border:none;
      outline:none;
      border-radius: 15px;
-     background: #fbfcbd;
+     background: #cefb9a;
      color: #000000 ;
 }
 
