@@ -2,14 +2,14 @@ export class FormValuesClass{
   private _firstName: string;
   private _kcalCategory: string;
   private _diet: string;
-  private _weight: string;
-  private _height: string;
-  private _age: string;
+  private _weight: number;
+  private _height: number;
+  private _age: number;
   private _trainingExperience: string;
   private _gender: string;
     
-    constructor(firstName:string, kcalCategory:string, diet:string, weight:string, 
-       height:string, age:string, trainingExperience:string, gender:string){
+    constructor(firstName:string, kcalCategory:string, diet:string, weight:number, 
+       height:number, age:number, trainingExperience:string, gender:string){
        this._firstName = firstName;
        this._kcalCategory = kcalCategory;
        this._diet = diet;
@@ -45,27 +45,27 @@ export class FormValuesClass{
       this._diet=diet;
     }
 
-    get Weight():string{
+    get Weight():number{
         return this._weight;
     }
 
-    set Weight(weight:string){
+    set Weight(weight:number){
       this._weight=weight;
     }
 
-    get Height():string{
+    get Height():number{
       return this._height;
     }
 
-    set Height(height:string){
+    set Height(height:number){
       this._height=height;
     }
 
-    get Age():string{
+    get Age():number{
       return this._age;
     }
 
-    set Age(age:string){
+    set Age(age:number){
       this._age=age;
     }
 
