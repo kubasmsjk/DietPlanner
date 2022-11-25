@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormValuesClass } from '../types/formValues';
 import { nameValidator } from '../validators/name-validator';
 
 
@@ -10,7 +11,9 @@ import { nameValidator } from '../validators/name-validator';
   styleUrls: ['./user-input-form.component.css']
 })
 export class UserInputFormComponent implements OnInit {
+
   formModel: FormGroup;
+  formValues: FormValuesClass[] = [];
   constructor(private router: Router) {
 
     this.formModel = new FormGroup({
@@ -56,7 +59,8 @@ export class UserInputFormComponent implements OnInit {
   }
 
   submit(){
-    
+    this.formValues.push(new FormValuesClass(this.firstName,this.typeOfWeight,this.diet,this.weight,this.height,this.age,this.trainingExperience,this.gender));
+    console.table(this.formValues);
   }
 
 }

@@ -1,15 +1,14 @@
 .footer {
-    position: absolute;
-    bottom: auto;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     background-color: #292929;
-    border-top: solid #ffffff;
+    border-top: 3px solid #ffffff;
   }
   .footerText{
     font-family: 'Playfair Display', serif;
     color: #808080;
-    text-align: center;
     font-size: 14px;
-    margin: 4px;
-    padding: 4px;
+    margin: 0.3%;
   }

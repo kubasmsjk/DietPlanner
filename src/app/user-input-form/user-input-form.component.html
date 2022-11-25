@@ -1,52 +1,51 @@
 <div class="container">
-    <form [formGroup]="formModel" (ngSubmit)="submit()" >
-        <h1 class="topic-header">Jak się nazywasz?</h1>
-            <div class="form-group">
-                <input name="firstName" type="text" class="form-control" placeholder="Podaj swoje imię" value="firstName" formControlName = "firstName">
+    <div class="leftSection">
+        <form [formGroup]="formModel" (ngSubmit)="submit()">
+            
+            <h1 class="topic-header">Jakie jest twoje imię i płeć?</h1>
+            <div>
+                <input type="text" name="firstname" placeholder="Podaj swoje imię" value="firstName" formControlName = "firstName">
+                <select formControlName = "gender">
+                  <option value="" disabled selected>Wybierz płeć</option>
+                  <option value="male" >Mężczyzna</option>
+                  <option value="female">Kobieta</option>
+                </select>
             </div>
+            
             <div *ngIf="formModel.controls['firstName'].errors && formModel.controls['firstName']?.touched">
                 Imię musi składać się z liter.
             </div>
-        <h1 class="topic-header">Jaka kaloryczność jest odpowiednia dla Ciebie?</h1>
-            <div class="radio" ><!--formControlName="radio1"-->
-                    <label class="b-contain">
-                        <span>Chcę schudnąć</span>
-                        <input name="radio" type="radio" value="loseWeight" formControlName = "radio">
-                        <div class="b-input"></div>
+            
+            <h1 class="topic-header">Jaka kaloryczność jest odpowiednia dla Ciebie?</h1>
+                <div class="inputs-inline">
+                    <label for="loseWeight" class="radio">
+                        <input type="radio" name="radio" id="loseWeight" value="loseWeight" class="radio__input" formControlName = "radio">
+                        <div class="radio__radio"></div>
+                        Chcę schudnąć
                     </label>
-                    <label class="b-contain">
-                        <span>Chcę przytyć</span>
-                        <input name="radio" type="radio" value="gainWeight" formControlName = "radio">
-                        <div class="b-input"></div>
+                    <label for="gainWeight" class="radio">
+                        <input type="radio" name="radio" id="gainWeight" value="gainWeight" class="radio__input" formControlName = "radio"/>
+                        <div class="radio__radio"></div>
+                        Chcę przytyć
                     </label>
-                    <label class="b-contain">
-                        <span>Chcę utrzymać formę</span>
-                        <input name="radio" type="radio" value="keepWeight" formControlName = "radio">
-                        <div class="b-input"></div>
+                    <label for="keepWeight" class="radio">
+                        <input type="radio" name="radio" id="keepWeight" value="keepWeight" class="radio__input" formControlName = "radio"/>
+                        <div class="radio__radio"></div>
+                        Chcę utrzymać formę
                     </label>
-            </div>
-        <h1 class="topic-header">Jaką dietę chcesz wybrać?</h1>
-            <div class="select" >
-                <label>Interesuję mnie dieta:</label>
-                    <select name="diet" formControlName = "diet">
-                      <option value="" disabled selected>Wybierz rodzaj diety</option>
-                      <option value = "basicDiet"  >Podstawowa</option>
-                      <option value = "vegeDiet" >Wegańska</option>
-                      <option value = "highProteinDiet" >Wysoko białkowa</option>
-                    </select>
-            </div>
-        <h1 class="topic-header">Ile masz wzrostu i ile ważysz?</h1>
+                </div>
+                <h1 class="topic-header">Jaką dietę chcesz wybrać?</h1>
+            <select name="diet" formControlName = "diet">
+              <option value="" disabled selected>Wybierz rodzaj diety</option>
+              <option value = "basicDiet"  >Podstawowa</option>
+              <option value = "vegeDiet" >Wegańska</option>
+              <option value = "highProteinDiet" >Wysoko białkowa</option>
+            </select>
+            
+            <h1 class="topic-header">Ile masz wzrostu i ile ważysz?</h1>
             <div>
-                <div class="form-group">
-                    <label for="weight"></label>Waga
-                    <input type="number" name="weight" class="form-control" placeholder="Podaj swoją wagę" step="1" formControlName="weight">
-                
-                </div>
-        
-                <div class="form-group">
-                    <label for="height"></label>Wzrost
-                    <input type="number" name="height" class="form-control" placeholder="Podaj swój wzrost" step="1" formControlName="height">
-                </div>
+                <input type="number" placeholder="Podaj swoją wagę" step="1" formControlName="weight">
+                <input type="number" placeholder="Podaj swój wzrost" step="1" formControlName="height">  
             </div>
             <div *ngIf="formModel.controls['weight'].errors && formModel.controls['weight']?.touched">
                 Waga musi być pomiędzy 20 a 200.
@@ -54,41 +53,28 @@
             <div *ngIf="formModel.controls['height'].errors && formModel.controls['height']?.touched">
                 Wzrost musi być pomiędzy 140 a 220.
             </div>
-        <h1 class="topic-header">Ile masz lat a ile ćwiczysz?</h1>
+
+            <h1 class="topic-header">Ile masz lat a ile ćwiczysz?</h1>
             <div>
-                <div class="form-group">
-                    <label for="age"></label>Wiek:
-                    <input type="number" name="age" class="form-control" placeholder="Podaj swój wiek" step="1" formControlName="age">
-                </div>
-                <div class="form-group">
-                    <div class="select">
-                        <label>Staż treningowy:</label>
-                        <select name="trainingExperience" formControlName = "trainingExperience">
-                            <option value="" disabled selected>Wybierz staż treningowy</option>
-                          <option value="noTraining" selected>Nie ćwiczę lub rzadko</option>
-                          <option value="mediumTraining">Lekko ćwiczę</option>
-                          <option value="hardTraining">Regularnie ćwiczę</option>
-                        </select>
-                    </div>
-                </div>
+                <input type="number" placeholder="Podaj swój wiek" step="1" formControlName="age">
+                <select name="trainingExperience" formControlName = "trainingExperience">
+                    <option value="" disabled selected>Wybierz staż treningowy</option>
+                  <option value="noTraining" selected>Nie ćwiczę lub rzadko</option>
+                  <option value="mediumTraining">Lekko ćwiczę</option>
+                  <option value="hardTraining">Regularnie ćwiczę</option>
+                </select>
             </div>
-                <div *ngIf="formModel.controls['age'].errors && formModel.controls['age']?.touched">
-                    Wiek musi być pomiędzy 10 a 80
-                </div>
-        <h1 class="topic-header">Twoja płeć?</h1>
-            <div class="form-group">
-                <div class="select">
-                    <label>Płeć:</label>
-                        <select name="gender" formControlName = "gender">
-                          <option value="" disabled selected>Wybierz płeć</option>
-                          <option value="male" >Mężczyzna</option>
-                          <option value="female">Kobieta</option>
-                        </select>
-                </div>
-            </div><br>
-        <button class="btn" type ="submit" appGrayed [isformValid]="formModel.valid" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
-    </form>
-</div>
-<div id="help-banan-image-div">
-    <img id="help-banan-image" *ngIf="!formModel.valid" src="../../assets/banan.png" width="250px" height="auto" alt="banan-image">
+            <div *ngIf="formModel.controls['age'].errors && formModel.controls['age']?.touched">
+                Wiek musi być pomiędzy 10 a 80
+            </div>
+        
+            <button class="btn" type ="submit" (click)="submit()" appGrayed [isformValid]="formModel.valid" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
+                
+        </form>
+    </div>
+
+    <div class="rightSection">
+           <img id="help-banan-image" *ngIf="!formModel.valid" src="../../assets/banan.png" width="250px" height="auto" alt="banan-image">
+    </div>
+
 </div>

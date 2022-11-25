@@ -1,20 +1,13 @@
-export type Meals= {
-    id: number;
-    name: string;
-    kcal: string;
-}
-
 export class MealsClass{
-    public _id!: number;
-    public _name!: string;
-    public _kcal!: string;  
+    private _id: number;
+    private _name: string;
+    private _kcal: string;  
     
-    constructor(private id:number, private name:string, private kcal:string){
-      this._id=id;
-      this._name=name;
-      this._kcal=kcal;
+    constructor(id:number, name:string, kcal:string){
+      this._id = id;
+      this._name = name;
+      this._kcal = kcal;
     }
-  
   
     get Id():number{
       return this._id;
