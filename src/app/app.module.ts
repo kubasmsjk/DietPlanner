@@ -14,6 +14,8 @@ import { DietTableComponent } from './diet-table/diet-table.component';
 import { CreateDietComponent } from './create-diet/create-diet.component';
 import { GrayedDirective } from './user-input-form/grayed.directive';
 import { MealsDataBaseComponent } from './meals-data-base/meals-data-base.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { HttpService } from './admin-panel/http.service';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { MealsDataBaseComponent } from './meals-data-base/meals-data-base.compon
     DietTableComponent,
     CreateDietComponent,
     GrayedDirective,
-    MealsDataBaseComponent
+    MealsDataBaseComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { MealsDataBaseComponent } from './meals-data-base/meals-data-base.compon
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
