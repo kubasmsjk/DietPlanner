@@ -1,4 +1,4 @@
-export class MealsClass{
+export class MealsClass {
     private _id: number;
     private _name: string;
     private _kcal: string;  

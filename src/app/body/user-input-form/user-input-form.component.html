@@ -1,6 +1,6 @@
 <div class="container">
     <div class="leftSection">
-        <form [formGroup]="formModel" (ngSubmit)="submit()">
+        <form [formGroup]="formModel" (ngSubmit)="onSubmit()">
             
             <h1 class="topic-header">Jakie jest twoje imię i płeć?</h1>
             <div>
@@ -68,7 +68,7 @@
                 Wiek musi być pomiędzy 10 a 80
             </div>
         
-            <button class="btn" type ="submit" (click)="submit()" appGrayed [isformValid]="formModel.valid" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
+            <button type="submit" class="btn" (click)="onSubmit()" appGrayed [isformValid]="formModel.valid" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
                 
         </form>
     </div>

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    bottom: auto;
     background-color: #292929;
     border-top: 3px solid #ffffff;
   }

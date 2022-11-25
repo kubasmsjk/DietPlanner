@@ -1,8 +1,9 @@
 import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormValuesClass } from '../types/formValues';
-import { nameValidator } from '../validators/name-validator';
+import { FormValuesClass } from '../../classes/formValues';
+import { nameValidator } from '../../validators/name-validator';
+import { FormDataService } from '../services/form-data.service';
 
 
 @Component({
@@ -13,9 +14,8 @@ import { nameValidator } from '../validators/name-validator';
 export class UserInputFormComponent implements OnInit {
 
   formModel: FormGroup;
-  formValues: FormValuesClass[] = [];
-  constructor(private router: Router) {
 
+  constructor(private router: Router, private formDataService : FormDataService) {
     this.formModel = new FormGroup({
       weight: new FormControl('', [Validators.required, Validators.min(20), Validators.max(200)]),
       height: new FormControl('', [Validators.required, Validators.min(140), Validators.max(220)]),
@@ -25,7 +25,7 @@ export class UserInputFormComponent implements OnInit {
       trainingExperience: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
       firstName: new FormControl('',[Validators.required, nameValidator])
-    })
+    });
 
    }
 
@@ -58,9 +58,9 @@ export class UserInputFormComponent implements OnInit {
     return this.formModel.get('gender')?.value;
   }
 
-  submit(){
-    this.formValues.push(new FormValuesClass(this.firstName,this.typeOfWeight,this.diet,this.weight,this.height,this.age,this.trainingExperience,this.gender));
-    console.table(this.formValues);
+  onSubmit(){
+    let formValues = new FormValuesClass(this.firstName,this.typeOfWeight,this.diet,this.weight,this.height,this.age,this.trainingExperience,this.gender)
+    this.formDataService.addFormValuesToArray(formValues)
   }
 
 }

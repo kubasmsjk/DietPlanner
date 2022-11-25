@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { MealsClass } from '../types/meals';
+import { MealsClass } from '../classes/meals';
 
 @Component({
   selector: 'app-meals-data-base',
@@ -15,7 +15,7 @@ export class MealsDataBaseComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<Array<MealsClass>>('http://localhost:3000/vege').subscribe((basicDiet: MealsClass[]) =>
     {
-      console.log('res', basicDiet)
+      console.log('res', basicDiet);
     });
   }
 
