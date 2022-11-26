@@ -1,132 +1,144 @@
 {
   "basicDiet": [
     {
-      "id": 1, 
-      "name": "Jajecznica z boczkiem",
-      "kcal": "290"
-
+      "Breakfast": [
+        {
+          "id": 1, 
+          "name": "Jajecznica z boczkiem",
+          "kcal": "290"
+    
+        },
+        {
+          "id": 2, 
+          "name": "Kanapki z piersi indyka",
+          "kcal": "199"
+          
+        },
+        {
+          "id": 3, 
+          "name": "Twaróg z miodem", 
+          "kcal": "99"
+          
+        },
+        {
+          "id": 4, 
+          "name": "Kanapki ze schabem", 
+          "kcal": "146"
+          
+        },
+        {
+          "id": 5, 
+          "name": "Kasza jaglana na mleku", 
+          "kcal": "108"
+          
+        },
+        {
+          "id": 6, 
+          "name": "Pasta rybna", 
+          "kcal": "184"
+          
+        },
+        {
+          "id": 7, 
+          "name": "Grzanki z boczkiem", 
+          "kcal": "209"
+          
+        }
+      ]
     },
     {
-      "id": 2, 
-      "name": "Kanapki z piersi indyka",
-      "kcal": "199"
-      
+      "Dinner": [
+        {
+          "id": 8, 
+          "name": "Kurczak z ryżem", 
+          "kcal": "368"
+          
+        },
+        {
+          "id": 9, 
+          "name": "Indyk z ryżem", 
+          "kcal": "338"
+          
+        },
+        {
+          "id": 10, 
+          "name": "Kurczak z kaszą", 
+          "kcal": "313"
+          
+        },
+        {
+          "id": 11, 
+          "name": "Schabowy z ziemniakami", 
+          "kcal": "387"
+          
+        },
+        {
+          "id": 12, 
+          "name": "Naleśniki z twarogiem", 
+          "kcal": "288"
+          
+        },
+        {
+          "id": 13, 
+          "name": "Łosoś z ziemniakami", 
+          "kcal": "319"
+          
+        },
+        {
+          "id": 14, 
+          "name": "Kotlet mielony z kaszą", 
+          "kcal": "370"
+          
+        }
+      ]
     },
     {
-      "id": 3, 
-      "name": "Twaróg z miodem", 
-      "kcal": "99"
-      
-    },
-    {
-      "id": 4, 
-      "name": "Kanapki ze schabem", 
-      "kcal": "146"
-      
-    },
-    {
-      "id": 5, 
-      "name": "Kasza jaglana na mleku", 
-      "kcal": "108"
-      
-    },
-    {
-      "id": 6, 
-      "name": "Pasta rybna", 
-      "kcal": "184"
-      
-    },
-    {
-      "id": 7, 
-      "name": "Grzanki z boczkiem", 
-      "kcal": "209"
-      
-    },
-    {
-      "id": 8, 
-      "name": "Kurczak z ryżem", 
-      "kcal": "368"
-      
-    },
-    {
-      "id": 9, 
-      "name": "Indyk z ryżem", 
-      "kcal": "338"
-      
-    },
-    {
-      "id": 10, 
-      "name": "Kurczak z kaszą", 
-      "kcal": "313"
-      
-    },
-    {
-      "id": 11, 
-      "name": "Schabowy z ziemniakami", 
-      "kcal": "387"
-      
-    },
-    {
-      "id": 12, 
-      "name": "Naleśniki z twarogiem", 
-      "kcal": "288"
-      
-    },
-    {
-      "id": 13, 
-      "name": "Łosoś z ziemniakami", 
-      "kcal": "319"
-      
-    },
-    {
-      "id": 14, 
-      "name": "Kotlet mielony z kaszą", 
-      "kcal": "370"
-      
-    },
-    {
-      "id": 15, 
-      "name": "Kurczak z cukinią", 
-      "kcal": "338"
-      
-    },
-    {
-      "id": 16, 
-      "name": "Tosty z serem", 
-      "kcal": "428"
-      
-    },
-    {
-      "id": 17, 
-      "name": "Tatar z łososia", 
-      "kcal": "318"
-      
-    },
-    {
-      "id": 18, 
-      "name": "Sałatka pomidorowa", 
-      "kcal": "108"
-      
-    },
-    {
-      "id": 19, 
-      "name": "Kurczak z rukolą", 
-      "kcal": "218"
-      
-    }
-    ,
-    {
-      "id": 20, 
-      "name": "Kanapki z dżemem", 
-      "kcal": "299"
-      
-    }
-    ,
-    {
-      "id": 21, 
-      "name": "Sałatka z brokuła", 
-      "kcal": "138"
-      
+      "Supper":[
+        {
+          "id": 15, 
+          "name": "Kurczak z cukinią", 
+          "kcal": "338"
+          
+        },
+        {
+          "id": 16, 
+          "name": "Tosty z serem", 
+          "kcal": "428"
+          
+        },
+        {
+          "id": 17, 
+          "name": "Tatar z łososia", 
+          "kcal": "318"
+          
+        },
+        {
+          "id": 18, 
+          "name": "Sałatka pomidorowa", 
+          "kcal": "108"
+          
+        },
+        {
+          "id": 19, 
+          "name": "Kurczak z rukolą", 
+          "kcal": "218"
+          
+        }
+        ,
+        {
+          "id": 20, 
+          "name": "Kanapki z dżemem", 
+          "kcal": "299"
+          
+        }
+        ,
+        {
+          "id": 21, 
+          "name": "Sałatka z brokuła", 
+          "kcal": "138"
+          
+        }
+      ]
     }
   
   ],
