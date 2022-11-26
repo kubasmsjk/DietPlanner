@@ -1,148 +1,138 @@
 {
-  "basicDiet": [
+  "basicDietBreakfast": [
     {
-      "Breakfast": [
-        {
-          "id": 1, 
-          "name": "Jajecznica z boczkiem",
-          "kcal": "290"
-    
-        },
-        {
-          "id": 2, 
-          "name": "Kanapki z piersi indyka",
-          "kcal": "199"
-          
-        },
-        {
-          "id": 3, 
-          "name": "Twaróg z miodem", 
-          "kcal": "99"
-          
-        },
-        {
-          "id": 4, 
-          "name": "Kanapki ze schabem", 
-          "kcal": "146"
-          
-        },
-        {
-          "id": 5, 
-          "name": "Kasza jaglana na mleku", 
-          "kcal": "108"
-          
-        },
-        {
-          "id": 6, 
-          "name": "Pasta rybna", 
-          "kcal": "184"
-          
-        },
-        {
-          "id": 7, 
-          "name": "Grzanki z boczkiem", 
-          "kcal": "209"
-          
-        }
-      ]
+      "id": 1, 
+      "name": "Jajecznica z boczkiem",
+      "kcal": "290"
+
     },
     {
-      "Dinner": [
-        {
-          "id": 8, 
-          "name": "Kurczak z ryżem", 
-          "kcal": "368"
-          
-        },
-        {
-          "id": 9, 
-          "name": "Indyk z ryżem", 
-          "kcal": "338"
-          
-        },
-        {
-          "id": 10, 
-          "name": "Kurczak z kaszą", 
-          "kcal": "313"
-          
-        },
-        {
-          "id": 11, 
-          "name": "Schabowy z ziemniakami", 
-          "kcal": "387"
-          
-        },
-        {
-          "id": 12, 
-          "name": "Naleśniki z twarogiem", 
-          "kcal": "288"
-          
-        },
-        {
-          "id": 13, 
-          "name": "Łosoś z ziemniakami", 
-          "kcal": "319"
-          
-        },
-        {
-          "id": 14, 
-          "name": "Kotlet mielony z kaszą", 
-          "kcal": "370"
-          
-        }
-      ]
+      "id": 2, 
+      "name": "Kanapki z piersi indyka",
+      "kcal": "199"
+      
     },
     {
-      "Supper":[
-        {
-          "id": 15, 
-          "name": "Kurczak z cukinią", 
-          "kcal": "338"
-          
-        },
-        {
-          "id": 16, 
-          "name": "Tosty z serem", 
-          "kcal": "428"
-          
-        },
-        {
-          "id": 17, 
-          "name": "Tatar z łososia", 
-          "kcal": "318"
-          
-        },
-        {
-          "id": 18, 
-          "name": "Sałatka pomidorowa", 
-          "kcal": "108"
-          
-        },
-        {
-          "id": 19, 
-          "name": "Kurczak z rukolą", 
-          "kcal": "218"
-          
-        }
-        ,
-        {
-          "id": 20, 
-          "name": "Kanapki z dżemem", 
-          "kcal": "299"
-          
-        }
-        ,
-        {
-          "id": 21, 
-          "name": "Sałatka z brokuła", 
-          "kcal": "138"
-          
-        }
-      ]
+      "id": 3, 
+      "name": "Twaróg z miodem", 
+      "kcal": "99"
+      
+    },
+    {
+      "id": 4, 
+      "name": "Kanapki ze schabem", 
+      "kcal": "146"
+      
+    },
+    {
+      "id": 5, 
+      "name": "Kasza jaglana na mleku", 
+      "kcal": "108"
+      
+    },
+    {
+      "id": 6, 
+      "name": "Pasta rybna", 
+      "kcal": "184"
+      
+    },
+    {
+      "id": 7, 
+      "name": "Grzanki z boczkiem", 
+      "kcal": "209"
+      
     }
-  
   ],
-  "vegeDiet": [
+  "basicDietDinner": [
+    {
+      "id": 1, 
+      "name": "Kurczak z ryżem", 
+      "kcal": "368"
+      
+    },
+    {
+      "id": 2, 
+      "name": "Indyk z ryżem", 
+      "kcal": "338"
+      
+    },
+    {
+      "id": 3, 
+      "name": "Kurczak z kaszą", 
+      "kcal": "313"
+      
+    },
+    {
+      "id": 4, 
+      "name": "Schabowy z ziemniakami", 
+      "kcal": "387"
+      
+    },
+    {
+      "id": 5, 
+      "name": "Naleśniki z twarogiem", 
+      "kcal": "288"
+      
+    },
+    {
+      "id": 6, 
+      "name": "Łosoś z ziemniakami", 
+      "kcal": "319"
+      
+    },
+    {
+      "id": 7, 
+      "name": "Kotlet mielony z kaszą", 
+      "kcal": "370"
+      
+    }
+    ],
+    "basicDietSupper": [
+    {
+      "id": 1, 
+      "name": "Kurczak z cukinią", 
+      "kcal": "338"
+        
+    },
+    {
+      "id": 2, 
+      "name": "Tosty z serem", 
+      "kcal": "428"
+      
+    },
+    {
+      "id": 3, 
+      "name": "Tatar z łososia", 
+      "kcal": "318"
+      
+    },
+    {
+      "id": 4, 
+      "name": "Sałatka pomidorowa", 
+      "kcal": "108"
+      
+    },
+    {
+      "id": 5, 
+      "name": "Kurczak z rukolą", 
+      "kcal": "218"
+      
+    }
+    ,
+    {
+      "id": 6, 
+      "name": "Kanapki z dżemem", 
+      "kcal": "299"
+      
+    }
+    ,
+    {
+      "id": 7, 
+      "name": "Sałatka z brokuła", 
+      "kcal": "138"   
+    } 
+  ],
+  "vegeDietBreakfast": [
     {
       "id": 1, 
       "name": "Kanapki z pomidorem", 
@@ -184,96 +174,100 @@
       "name": "Grzanki", 
       "kcal": "99"
       
-    },
+    }
+  ],
+    "vegeDietDinner":  [
     {
-      "id": 8, 
+      "id": 1, 
       "name": "Pulpety z soczewicy", 
       "kcal": "238"
       
     },
     {
-      "id": 9, 
+      "id": 2, 
       "name": "Chrupiący falafel z sosem", 
       "kcal": "318"
       
     },
     {
-      "id": 10, 
+      "id": 3, 
       "name": "Spaghetti bolognese z warzywami", 
       "kcal": "253"
       
     },
     {
-      "id": 11, 
+      "id": 4, 
       "name": "Kotlety z marchewki", 
       "kcal": "117"
       
     },
     {
-      "id": 12, 
+      "id": 5, 
       "name": "Smażony makaron z tofu", 
       "kcal": "311"
       
     },
     {
-      "id": 13, 
+      "id": 6, 
       "name": "Fajitas z czerwoną fasolą", 
       "kcal": "319"
       
     },
     {
-      "id": 14, 
+      "id": 7, 
       "name": "Shakshuka", 
       "kcal": "310"
       
-    },
+    }
+  ],
+  "vegeDietSupper":  [
     {
-      "id": 15, 
+      "id": 1, 
       "name": "Koktajl Pomarańcza Szpinak", 
       "kcal": "94"
       
     },
     {
-      "id": 16, 
+      "id": 2, 
       "name": "Krem z kalafiora", 
       "kcal": "158"
       
     },
     {
-      "id": 17, 
+      "id": 3, 
       "name": "Makaron ze szparagami", 
       "kcal": "318"
       
     },
     {
-      "id": 18, 
+      "id": 4, 
       "name": "Zupa krem z batatów", 
       "kcal": "166"
       
     },
     {
-      "id": 19, 
+      "id": 5, 
       "name": "Pasta z białej fasoli", 
       "kcal": "201"
       
     }
     ,
     {
-      "id": 20, 
+      "id": 6, 
       "name": "Focaccia z pomidorami", 
       "kcal": "199"
       
     }
     ,
     {
-      "id": 21, 
+      "id": 7, 
       "name": "Sałatka z brokuła", 
       "kcal": "138"
       
     }
   
   ],
-  "highProteinDiet": [
+  "highProteinDietBreakfast": [
     {
       "id": 1, 
       "name": "Jajecznica z tofu", 
@@ -315,89 +309,93 @@
       "name": "Burrito z czarną fasolą", 
       "kcal": "299"
       
-    },
+    }
+  ],
+  "highProteinDietDinner": [
     {
-      "id": 8, 
+      "id": 1, 
       "name": "Calzone z jajek", 
       "kcal": "418"
       
     },
     {
-      "id": 9, 
+      "id": 2, 
       "name": "Pieczone udka", 
       "kcal": "368"
       
     },
     {
-      "id": 10, 
+      "id": 3, 
       "name": "Serowe tofu z kuskusem", 
       "kcal": "333"
       
     },
     {
-      "id": 11, 
+      "id": 4, 
       "name": "Wołowina z puree", 
       "kcal": "313"
       
     },
     {
-      "id": 12, 
+      "id": 5, 
       "name": "Wrapy z kurczaka", 
       "kcal": "311"
       
     },
     {
-      "id": 13, 
+      "id": 6, 
       "name": "Szarpany kurczak z batatami", 
       "kcal": "394"
       
     },
     {
-      "id": 14, 
+      "id": 7, 
       "name": "Włoski gulasz wołowy", 
       "kcal": "310"
       
-    },
+    }
+  ],
+  "highProteinDietSupper": [
     {
-      "id": 15, 
+      "id": 1, 
       "name": "Shakshuka", 
       "kcal": "344"
       
     },
     {
-      "id": 16, 
+      "id": 2, 
       "name": "Twarożek w wersji wytrawnej", 
       "kcal": "158"
       
     },
     {
-      "id": 17, 
+      "id": 3, 
       "name": "Pasta jajeczna", 
       "kcal": "318"
       
     },
     {
-      "id": 18, 
+      "id": 4, 
       "name": "Shake wysokobiałkowy", 
       "kcal": "166"
       
     },
     {
-      "id": 19, 
+      "id": 5, 
       "name": "Pasta z białej fasoli", 
       "kcal": "201"
       
     }
     ,
     {
-      "id": 20, 
+      "id": 6, 
       "name": "Makaron z tofu", 
       "kcal": "199"
       
     }
     ,
     {
-      "id": 21, 
+      "id": 7, 
       "name": "Owsianka wysokobiałkowa", 
       "kcal": "138"
       
