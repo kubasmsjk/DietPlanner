@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Post } from "./admin-panel.component";
+import { Diet } from "./admin-panel.component";
 import { Observable } from "rxjs";
 import { HttpClient, HttpParams } from "@angular/common/http";
 
@@ -8,25 +8,22 @@ export class HttpService{
 
     constructor(private http: HttpClient){}
     
-    getPosts(): Observable<Array<Post>>{
-       return this.http.get<Array<Post>>("http://localhost:3000/posts");
+    getDiets(): Observable<Array<Diet>>{
+       return this.http.get<Array<Diet>>("http://localhost:3000/posts");
     }
-    getPost(id:number){
+    getDiet(id:number){
 
     }
-    getPostByUser(userId: number){
+
+    addPost(diet: Diet){
 
     }
-    addPost(post: Post){
+
+    updateDiet(diet: Diet){
 
     }
-    updatePost(post: Post){
 
-    }
-    deletePost(id: number){
+    deleteDiet(id: number){
 
-    }
-    changePost(post: Post){
-        
     }
 }

@@ -11,21 +11,19 @@ export class AdminPanelComponent {
 
   constructor(private httpService: HttpService, private router: Router) { }
 
-
-  getPosts(){
-    this.httpService.getPosts().subscribe(posts =>{
-      console.log(posts);
+  getDiets(){
+    this.httpService.getDiets().subscribe(diets =>{
+      console.log(diets);
     });
   }
 
-  deletePost(){
+  deleteDiet(){
 
   }
   
 }
-export interface Post{
-  userId?: number;
+export interface Diet{
   id?: number;
-  title?: string;
-  body?: string;
+  name?: string;
+  kcal?: string;
 }
