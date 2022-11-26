@@ -2,13 +2,13 @@
   "basicDiet": [
     {
       "id": 1, 
-      "name": "Jajecznica z boczkiem", 
+      "name": "Jajecznica z boczkiem",
       "kcal": "290"
-      
+
     },
     {
       "id": 2, 
-      "name": "Kanapki z piersi indyka", 
+      "name": "Kanapki z piersi indyka",
       "kcal": "199"
       
     },
