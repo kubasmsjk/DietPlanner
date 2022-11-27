@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Meals } from "src/app/interfaces/meals";
+import { map } from "rxjs";
 
 @Injectable()
 export class HttpService{
@@ -9,7 +10,7 @@ export class HttpService{
 
     //Śniadania dieta podstawowa
     getBasicDiet(){
-        return this.http.get<Array<Meals>>("http://localhost:3000/basicDiet");
+        return this.http.get<Array<Meals>>("http://localhost:3000/basicDiet").pipe(map(result=>result));
     }
 
     getBasicDietBreakfast(id:number){
