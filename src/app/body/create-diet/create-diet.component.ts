@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormValuesClass } from 'src/app/classes/formValues';
 import { typeOfActivity } from 'src/app/enums/typeOfActivity';
 import { typeOfDiet } from 'src/app/enums/typeOfDiet';
@@ -17,7 +18,7 @@ export class CreateDietComponent implements OnInit {
   basicDiet: Meals[]=[];
   vegeDiet: Meals[]=[];
   highProteinDiet: Meals[]=[]  
-  constructor(private formDataService : FormDataService,private httpService: HttpService) { }
+  constructor(private formDataService : FormDataService,private httpService: HttpService,private router: Router) { }
 
   ngOnInit(): void {
     
@@ -29,6 +30,81 @@ export class CreateDietComponent implements OnInit {
       this.highProteinDiet = data);
     let formValues = this.formDataService.FormValuesArray;
   }
+  
+  finalBreakfastArray(type: string): Array<object>{
+
+    let finalBreakfastArray = []
+    var length = 7
+
+    if(type == 'basicDiet'){  
+      for(var i = 0 ; i<length ; i++){   
+        finalBreakfastArray[i] = this.basicDiet[0].Breakfast[Math.floor(Math.random() * this.basicDiet[0].Breakfast.length)];        
+      } 
+      
+    }
+    else if(type == 'vegeDiet'){
+      for(var i = 0 ; i<length ; i++){   
+        finalBreakfastArray[i] = this.vegeDiet[0].Breakfast[Math.floor(Math.random() * this.vegeDiet[0].Breakfast.length)];
+      }
+
+    }
+    else if(type == 'highProteinDiet'){
+      for(var i = 0 ; i<length ; i++){   
+        finalBreakfastArray[i] = this.highProteinDiet[0].Breakfast[Math.floor(Math.random() * this.highProteinDiet[0].Breakfast.length)];
+      }
+    }
+    console.table(finalBreakfastArray)
+    return finalBreakfastArray
+  }
+
+  finalDinnerArray(){
+
+    let finalDinnerArray = []
+    var length = 7
+
+    if(this.formValues.Diet == 'basicDiet'){  
+      for(var i = 0 ; i<length ; i++){   
+        finalDinnerArray[i] = this.basicDiet[1].Dinner[Math.floor(Math.random() * this.basicDiet[1].Dinner.length)];        
+      } 
+
+    }
+    else if(this.formValues.Diet == 'vegeDiet'){
+      for(var i = 0 ; i<length ; i++){   
+        finalDinnerArray[i] = this.vegeDiet[1].Dinner[Math.floor(Math.random() * this.vegeDiet[1].Dinner.length)];
+      }
+
+    }
+    else if(this.formValues.Diet == 'highProteinDiet'){
+      for(var i = 0 ; i<length ; i++){   
+        finalDinnerArray[i] = this.highProteinDiet[1].Dinner[Math.floor(Math.random() * this.highProteinDiet[1].Dinner.length)];
+      }
+    }
+  }
+
+  finalSupperArray(){
+
+    let finalSupperArray = []
+    var length = 7
+
+    if(this.formValues.Diet == 'basicDiet'){  
+      for(var i = 0 ; i<length ; i++){   
+        finalSupperArray[i] = this.basicDiet[2].Supper[Math.floor(Math.random() * this.basicDiet[2].Supper.length)];        
+      } 
+
+    }
+    else if(this.formValues.Diet == 'vegeDiet'){
+      for(var i = 0 ; i<length ; i++){   
+        finalSupperArray[i] = this.vegeDiet[2].Supper[Math.floor(Math.random() * this.vegeDiet[2].Supper.length)];
+      }
+
+    }
+    else if(this.formValues.Diet == 'highProteinDiet'){
+      for(var i = 0 ; i<length ; i++){   
+        finalSupperArray[i] = this.highProteinDiet[2].Supper[Math.floor(Math.random() * this.highProteinDiet[2].Supper.length)];
+      }
+    }
+  }
+
 
   isMale(gender: string): boolean{
     return gender == 'Male';
