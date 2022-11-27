@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormValuesClass } from 'src/app/classes/formValues';
+import { typeOfActivity } from 'src/app/enums/typeOfActivity';
+import { typeOfDiet } from 'src/app/enums/typeOfDiet';
+import { Meals } from 'src/app/interfaces/meals';
 import { FormDataService } from '../services/form-data.service';
+import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-create-diet',
@@ -8,12 +12,22 @@ import { FormDataService } from '../services/form-data.service';
   styleUrls: ['./create-diet.component.css']
 })
 export class CreateDietComponent implements OnInit {
-
+  
   formValues!: FormValuesClass;
+  basicDiet: Meals[]=[];
+  vegeDiet: Meals[]=[];
+  highProteinDiet: Meals[]=[];
 
-  constructor(private formDataService : FormDataService) { }
+  constructor(private formDataService : FormDataService,private httpService: HttpService) { }
 
   ngOnInit(): void {
+    
+    this.httpService.getBasicDiet().subscribe(data=>
+      this.basicDiet = data);
+    this.httpService.getVegeDiet().subscribe(data=>
+      this.vegeDiet = data);
+    this.httpService.getHighProteinDiet().subscribe(data=>
+      this.highProteinDiet = data);
     let formValues = this.formDataService.FormValuesArray;
   }
 
@@ -52,7 +66,7 @@ export class CreateDietComponent implements OnInit {
     return 0;
   }
 
-  calkulatorKCAL(): number | undefined{
+  calkulatorKCAL(): number{
 
     if(this.isMale(this.formValues.Gender)){
 
@@ -87,6 +101,7 @@ export class CreateDietComponent implements OnInit {
           return finalKcal;
       }
     }
+    return 0;
   }
 }
 
