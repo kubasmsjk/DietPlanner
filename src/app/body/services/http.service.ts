@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+
 import { Meals } from "src/app/interfaces/meals";
 import { map } from "rxjs";
 
@@ -68,7 +69,7 @@ export class HttpService{
     }
 
     deleteHighProteinDietBreakfast(id: number){
-
+        
     }
-    
+
 }

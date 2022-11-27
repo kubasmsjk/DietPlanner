@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Meals } from 'src/app/interfaces/meals';
+
 import { HttpService } from '../services/http.service';
 
 @Component({
@@ -21,34 +22,34 @@ export class AdminPanelComponent implements OnInit {
     this.getHighProteinDiet();
   }
 
-//PODSTAWOWA
-getBasicDiet(){
-  this.httpService.getBasicDiet().subscribe(data=>
-    this.basicDiet = data);
-}
+  //PODSTAWOWA
+  getBasicDiet(){
+    this.httpService.getBasicDiet().subscribe(data=>
+      this.basicDiet = data);
+  }
+    
+  deleteBasicDiet(){
+    console.log(this.basicDiet[1].Dinner[5].name)
+  }
   
-deleteBasicDiet(){
+  ////VEGE
+  getVegeDiet(){
+    this.httpService.getVegeDiet().subscribe(data=>
+      this.vegeDiet = data);
+  }
+    
+  deleteVegeDiet(){
   
-}
-
-//VEGE
-getVegeDiet(){
-  this.httpService.getVegeDiet().subscribe(data=>
-    this.vegeDiet = data);
-}
+  }
   
-deleteVegeDiet(){
-
-}
-
-//WYSOKOBIAŁKOWA
-getHighProteinDiet(){
-  this.httpService.getHighProteinDiet().subscribe(data=>
-    this.highProteinDiet = data);
-}
-  
-deleteHighProteinDiet(){
-  
-}
+  //WYSOKOBIAŁKOWA
+  getHighProteinDiet(){
+    this.httpService.getHighProteinDiet().subscribe(data=>
+      this.highProteinDiet = data);
+  }
+    
+  deleteHighProteinDiet(){
+    
+  }
 
 }

@@ -16,8 +16,7 @@ export class CreateDietComponent implements OnInit {
   formValues!: FormValuesClass;
   basicDiet: Meals[]=[];
   vegeDiet: Meals[]=[];
-  highProteinDiet: Meals[]=[];
-
+  highProteinDiet: Meals[]=[]  
   constructor(private formDataService : FormDataService,private httpService: HttpService) { }
 
   ngOnInit(): void {
