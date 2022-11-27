@@ -12,8 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserInputFormComponent } from './body/user-input-form/user-input-form.component';
 import { DietTableComponent } from './body/diet-table/diet-table.component';
 import { CreateDietComponent } from './body/create-diet/create-diet.component';
-import { GrayedDirective } from './body/user-input-form/grayed.directive';
-import { MealsDataBaseComponent } from './meals-data-base/meals-data-base.component';
+import { GrayedDirective } from './body/create-diet/grayed.directive';
 import { AdminPanelComponent } from './body/admin-panel/admin-panel.component';
 
 
@@ -27,7 +26,6 @@ import { AdminPanelComponent } from './body/admin-panel/admin-panel.component';
     DietTableComponent,
     CreateDietComponent,
     GrayedDirective,
-    MealsDataBaseComponent,
     AdminPanelComponent
   ],
   imports: [

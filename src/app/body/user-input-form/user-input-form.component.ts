@@ -60,7 +60,8 @@ export class UserInputFormComponent implements OnInit {
 
   onSubmit(){
     let formValues = new FormValuesClass(this.firstName,this.typeOfWeight,this.diet,this.weight,this.height,this.age,this.trainingExperience,this.gender)
-    this.formDataService.addFormValuesToArray(formValues)
+    this.formDataService.addFormValuesToArray(formValues);
+    this.router.navigate(['/diet-planner',this.firstName]);
   }
 
 }

@@ -3,7 +3,7 @@ import { FormValuesClass } from 'src/app/classes/formValues';
 
 @Injectable()
 export class FormDataService {
-  private formValuesClass: FormValuesClass[] = [];
+  formValuesClass: FormValuesClass[] = [];
 
   constructor() { }
 

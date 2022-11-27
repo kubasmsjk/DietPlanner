@@ -1,5 +1,5 @@
 export enum typeOfDiet {
-    KEEPWEIGHT = "keepWeight",
-    GAINWEIGHT = "gainWeight",
-    LOSEWEIGHT = "loseWeight"
+  BASICDIET = "basicDiet",
+  VEGEDIET = "vegeDiet",
+  HIGHTHPROTEINDIET = "highProteinDiet"
   }

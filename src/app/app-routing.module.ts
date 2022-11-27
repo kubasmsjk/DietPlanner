@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminPanelComponent } from './body/admin-panel/admin-panel.component';
 import { BodyComponent } from './body/body.component';
-import { CreateDietComponent } from './body/create-diet/create-diet.component';
 import { DietTableComponent } from './body/diet-table/diet-table.component';
 import { UserInputFormComponent } from './body/user-input-form/user-input-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/user-form', pathMatch: 'full'},
-  {path: 'create-diet', component: CreateDietComponent},
   {path: 'admin-panel', component: AdminPanelComponent},
   {path: '',component:BodyComponent, children: [
     { path: 'user-form' ,component: UserInputFormComponent},

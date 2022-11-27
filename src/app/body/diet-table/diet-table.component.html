@@ -2,40 +2,22 @@
 <table class="customTable">
     <thead>
       <tr>
-        <th></th>
+        <th>{{"Twoje zapotrzebowanie wynosi " + kcal}}</th>
         <th *ngFor="let day of weekDays">{{ day | uppercase}}</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Śniadanie</td>
-        <td>Row 1, Cell 2</td>
-        <td>Row 1, Cell 3</td>
-        <td>Row 1, Cell 4</td>
-        <td>Row 1, Cell 5</td>
-        <td>Row 1, Cell 6</td>
-        <td>Row 1, Cell 7</td>
-        <td>Row 1, Cell 8</td>
+        <td *ngFor="let breakfast of finalBreakfastArray ">{{ breakfast.name + " " +  breakfast.kcal + " kcal w 100g"}}</td>
       </tr>
       <tr>
         <td>Obiad</td>
-        <td>Row 2, Cell 2</td>
-        <td>Row 2, Cell 3</td>
-        <td>Row 2, Cell 4</td>
-        <td>Row 2, Cell 5</td>
-        <td>Row 2, Cell 6</td>
-        <td>Row 2, Cell 7</td>
-        <td>Row 2, Cell 8</td>
+        <td *ngFor="let dinner of finalDinnerArray ">{{ dinner.name + " " +  dinner.kcal + " kcal w 100g"}}</td>
       </tr>
       <tr>
         <td>Kolacja</td>
-        <td>Row 3, Cell 2</td>
-        <td>Row 3, Cell 3</td>
-        <td>Row 3, Cell 4</td>
-        <td>Row 3, Cell 5</td>
-        <td>Row 3, Cell 6</td>
-        <td>Row 3, Cell 7</td>
-        <td>Row 3, Cell 8</td>
+        <td *ngFor="let supper of finalSupperArray ">{{ supper.name + " " +  supper.kcal + " kcal w 100g"}}</td>
       </tr>
     </tbody>
   </table>

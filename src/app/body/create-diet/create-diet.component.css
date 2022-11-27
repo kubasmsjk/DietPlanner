@@ -1,0 +1,24 @@
+.btn{
+    background: linear-gradient(to right,#ffb133 ,#6439d0);
+    background-color: #ffb133;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 0.9em;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 8px 11px;
+    margin: 5px;
+    border: 0px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    
+   }
+  .btn:hover{
+  background: linear-gradient(to right,#ffba5e ,#7d61d5);
+  background-color: #ffba5e;
+  }
+  .btn:active{
+  transform: scale(0.95);
+  }
+  

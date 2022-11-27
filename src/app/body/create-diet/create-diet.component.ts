@@ -1,129 +1,148 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormValuesClass } from 'src/app/classes/formValues';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { typeOfActivity } from 'src/app/enums/typeOfActivity';
-import { typeOfDiet } from 'src/app/enums/typeOfDiet';
-import { Meals } from 'src/app/interfaces/meals';
+import { purposeOfDiet } from 'src/app/enums/purposeOfDiet';
+import { Breakfast, Dinner, Meals, Supper } from 'src/app/interfaces/meals';
 import { FormDataService } from '../services/form-data.service';
 import { HttpService } from '../services/http.service';
+import { typeOfDiet } from 'src/app/enums/typeOfDiet';
+import { TransitiveDietService } from '../services/transitive-diet.service';
 
 @Component({
   selector: 'app-create-diet',
   templateUrl: './create-diet.component.html',
   styleUrls: ['./create-diet.component.css']
 })
-export class CreateDietComponent implements OnInit {
-  
-  formValues!: FormValuesClass;
+export class CreateDietComponent implements OnInit, OnDestroy {
+  @Input() isformValid : boolean | undefined;
+  @Input() disabled : boolean | undefined;
+
   basicDiet: Meals[]=[];
   vegeDiet: Meals[]=[];
   highProteinDiet: Meals[]=[]  
-  constructor(private formDataService : FormDataService,private httpService: HttpService,private router: Router) { }
+
+  constructor(private formDataService : FormDataService,private httpService: HttpService,
+    private transitiveDietService : TransitiveDietService) { }
+  
+    ngOnDestroy(): void {
+      var formValues = this.formDataService.FormValuesArray;
+
+      var kcal = this.calkulatorKcal(formValues[0]);
+      this.transitiveDietService.setKcal(kcal);
+
+      var finalBreakfastArray = this.finalBreakfastArray(formValues[0].Diet);
+      var finalDinnerArray = this.finalDinnerArray(formValues[0].Diet);
+      var finalSupperArray = this.finalSupperArray(formValues[0].Diet);
+  
+      this.transitiveDietService.addBreakfastToArray(finalBreakfastArray);
+      this.transitiveDietService.addDinnerToArray(finalDinnerArray);
+      this.transitiveDietService.addSupperToArray(finalSupperArray);
+
+  }
 
   ngOnInit(): void {
     
     this.httpService.getBasicDiet().subscribe(data=>
-      this.basicDiet = data);
+    this.basicDiet = data);
     this.httpService.getVegeDiet().subscribe(data=>
-      this.vegeDiet = data);
+    this.vegeDiet = data);
     this.httpService.getHighProteinDiet().subscribe(data=>
-      this.highProteinDiet = data);
-    let formValues = this.formDataService.FormValuesArray;
-  }
-  
-  finalBreakfastArray(type: string): Array<object>{
-
-    let finalBreakfastArray = []
-    var length = 7
-
-    if(type == 'basicDiet'){  
-      for(var i = 0 ; i<length ; i++){   
-        finalBreakfastArray[i] = this.basicDiet[0].Breakfast[Math.floor(Math.random() * this.basicDiet[0].Breakfast.length)];        
-      } 
-      
-    }
-    else if(type == 'vegeDiet'){
-      for(var i = 0 ; i<length ; i++){   
-        finalBreakfastArray[i] = this.vegeDiet[0].Breakfast[Math.floor(Math.random() * this.vegeDiet[0].Breakfast.length)];
-      }
-
-    }
-    else if(type == 'highProteinDiet'){
-      for(var i = 0 ; i<length ; i++){   
-        finalBreakfastArray[i] = this.highProteinDiet[0].Breakfast[Math.floor(Math.random() * this.highProteinDiet[0].Breakfast.length)];
-      }
-    }
-    console.table(finalBreakfastArray)
-    return finalBreakfastArray
+    this.highProteinDiet = data);
+   
   }
 
-  finalDinnerArray(){
-
-    let finalDinnerArray = []
-    var length = 7
-
-    if(this.formValues.Diet == 'basicDiet'){  
-      for(var i = 0 ; i<length ; i++){   
-        finalDinnerArray[i] = this.basicDiet[1].Dinner[Math.floor(Math.random() * this.basicDiet[1].Dinner.length)];        
-      } 
-
+  randomBreakfastMeals(arrayDiet : Array<Meals>,finalBreakfastArray :Array<Breakfast>): Array<Breakfast>{
+    let length = 7;
+    for(var i = 0 ; i<length ; i++){   
+      finalBreakfastArray[i] = arrayDiet[0].Breakfast[Math.floor(Math.random() * arrayDiet[0].Breakfast.length)];        
     }
-    else if(this.formValues.Diet == 'vegeDiet'){
-      for(var i = 0 ; i<length ; i++){   
-        finalDinnerArray[i] = this.vegeDiet[1].Dinner[Math.floor(Math.random() * this.vegeDiet[1].Dinner.length)];
-      }
-
-    }
-    else if(this.formValues.Diet == 'highProteinDiet'){
-      for(var i = 0 ; i<length ; i++){   
-        finalDinnerArray[i] = this.highProteinDiet[1].Dinner[Math.floor(Math.random() * this.highProteinDiet[1].Dinner.length)];
-      }
-    }
+    return finalBreakfastArray;
   }
 
-  finalSupperArray(){
+  finalBreakfastArray(type : string): Array<Breakfast>{
+    let finalBreakfastArray : Array<Breakfast> = [];
 
-    let finalSupperArray = []
-    var length = 7
-
-    if(this.formValues.Diet == 'basicDiet'){  
-      for(var i = 0 ; i<length ; i++){   
-        finalSupperArray[i] = this.basicDiet[2].Supper[Math.floor(Math.random() * this.basicDiet[2].Supper.length)];        
-      } 
-
-    }
-    else if(this.formValues.Diet == 'vegeDiet'){
-      for(var i = 0 ; i<length ; i++){   
-        finalSupperArray[i] = this.vegeDiet[2].Supper[Math.floor(Math.random() * this.vegeDiet[2].Supper.length)];
+    switch(type){
+      case typeOfDiet.BASICDIET:{
+        return this.randomBreakfastMeals(this.basicDiet,finalBreakfastArray);
       }
-
-    }
-    else if(this.formValues.Diet == 'highProteinDiet'){
-      for(var i = 0 ; i<length ; i++){   
-        finalSupperArray[i] = this.highProteinDiet[2].Supper[Math.floor(Math.random() * this.highProteinDiet[2].Supper.length)];
+      case typeOfDiet.VEGEDIET:{
+        return this.randomBreakfastMeals(this.vegeDiet,finalBreakfastArray);
+      }
+      case typeOfDiet.HIGHTHPROTEINDIET:{
+        return this.randomBreakfastMeals(this.highProteinDiet,finalBreakfastArray);
       }
     }
+    return finalBreakfastArray;
   }
 
+  randomDinnerMeals(arrayDiet : Array<Meals>,finalDinnerArray :Array<Dinner>): Array<Dinner>{
+    let length = 7;
+    for(var i = 0 ; i<length ; i++){   
+      finalDinnerArray[i] = arrayDiet[1].Dinner[Math.floor(Math.random() * arrayDiet[1].Dinner.length)];        
+    }
+    return finalDinnerArray;
+  }
+
+  finalDinnerArray(type : string): Array<Dinner>{
+    let finalDinnerArray : Array<Dinner> = [];
+
+    switch(type){
+      case typeOfDiet.BASICDIET:{
+        return this.randomDinnerMeals(this.basicDiet,finalDinnerArray);
+      }
+      case typeOfDiet.VEGEDIET:{
+        return this.randomDinnerMeals(this.vegeDiet,finalDinnerArray);
+      }
+      case typeOfDiet.HIGHTHPROTEINDIET:{
+        return this.randomDinnerMeals(this.highProteinDiet,finalDinnerArray);
+      }
+    }
+    return finalDinnerArray;
+  }
+
+  randomSupperMeals(arrayDiet : Array<Meals>,finalSupperArray :Array<Supper>): Array<Supper>{
+    let length = 7;
+    for(var i = 0 ; i<length ; i++){   
+      finalSupperArray[i] = arrayDiet[2].Supper[Math.floor(Math.random() * arrayDiet[2].Supper.length)];        
+    }
+    return finalSupperArray;
+  }
+
+  finalSupperArray(type : string): Array<Supper>{
+    let finalSupperArray : Array<Supper> = [];
+
+    switch(type){
+      case typeOfDiet.BASICDIET:{
+        return this.randomSupperMeals(this.basicDiet,finalSupperArray);
+      }
+      case typeOfDiet.VEGEDIET:{
+        return this.randomSupperMeals(this.vegeDiet,finalSupperArray);
+      }
+      case typeOfDiet.HIGHTHPROTEINDIET:{
+        return this.randomSupperMeals(this.highProteinDiet,finalSupperArray);
+      }
+    }
+    return finalSupperArray;
+  }
 
   isMale(gender: string): boolean{
-    return gender == 'Male';
+    return gender == 'male';
   }
 
   isFemale(gender: string): boolean{
-    return gender == 'Female';
+    return gender == 'female';
   }
   
   recommendedKcalForMale(weight:number, height:number, age:number, activity: string): number{
     let aliveKcal = 66 + (13.7 * weight) + (5 * height) - (6.8 - age);
     let basicKcal = aliveKcal * this.activityMultiplier(activity);
-    return basicKcal;
+    return Math.round(basicKcal);
   }
 
   recommendedKcalForFemale(weight:number, height:number, age:number, activity: string): number{
     let aliveKcal = 65.5 + (9.6 * weight) + (1.85 * height) - (4.7 - age)
     let basicKcal = aliveKcal * this.activityMultiplier(activity);
-    return basicKcal;
+    return Math.round(basicKcal) ;
   }
 
   activityMultiplier(personalTypeOfActivity : string): number{
@@ -141,37 +160,37 @@ export class CreateDietComponent implements OnInit {
     return 0;
   }
 
-  calkulatorKCAL(): number{
+  calkulatorKcal(formValues: any): number{
 
-    if(this.isMale(this.formValues.Gender)){
-
-      switch(this.formValues.KcalCategory){
-        case typeOfDiet.KEEPWEIGHT: 
-          var finalKcal = this.recommendedKcalForMale(this.formValues.Weight, this.formValues.Height, this.formValues.Age, this.formValues.TrainingExperience);
+    if(this.isMale(formValues.Gender)){
+      
+      switch(formValues.KcalCategory){
+        case purposeOfDiet.KEEPWEIGHT: 
+          var finalKcal = this.recommendedKcalForMale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
           return finalKcal;
-        case typeOfDiet.GAINWEIGHT: 
-          var basicKcal = this.recommendedKcalForMale(this.formValues.Weight, this.formValues.Height, this.formValues.Age, this.formValues.TrainingExperience);
+        case purposeOfDiet.GAINWEIGHT: 
+          var basicKcal = this.recommendedKcalForMale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
           var finalKcal = basicKcal + (0.3 * basicKcal);
           return finalKcal;
-        case typeOfDiet.LOSEWEIGHT: 
-          var basicKcal = this.recommendedKcalForMale(this.formValues.Weight, this.formValues.Height, this.formValues.Age, this.formValues.TrainingExperience);
+        case purposeOfDiet.LOSEWEIGHT: 
+          var basicKcal = this.recommendedKcalForMale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
           var finalKcal = basicKcal - (0.1 * basicKcal);
           return finalKcal;
       }
     }
 
-    if(this.isFemale(this.formValues.Gender)){
+    if(this.isFemale(formValues.Gender)){
 
-      switch(this.formValues.KcalCategory){
-        case typeOfDiet.KEEPWEIGHT: 
-          var finalKcal = this.recommendedKcalForFemale(this.formValues.Weight, this.formValues.Height, this.formValues.Age, this.formValues.TrainingExperience);
+      switch(formValues.KcalCategory){
+        case purposeOfDiet.KEEPWEIGHT: 
+          var finalKcal = this.recommendedKcalForFemale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
           return finalKcal;
-        case typeOfDiet.GAINWEIGHT: 
-          var basicKcal = this.recommendedKcalForFemale(this.formValues.Weight, this.formValues.Height, this.formValues.Age, this.formValues.TrainingExperience);
+        case purposeOfDiet.GAINWEIGHT: 
+          var basicKcal = this.recommendedKcalForFemale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
           var finalKcal = basicKcal + (0.3 * basicKcal);
           return finalKcal;
-        case typeOfDiet.LOSEWEIGHT: 
-          var basicKcal = this.recommendedKcalForFemale(this.formValues.Weight, this.formValues.Height, this.formValues.Age, this.formValues.TrainingExperience);
+        case purposeOfDiet.LOSEWEIGHT: 
+          var basicKcal = this.recommendedKcalForFemale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
           var finalKcal = basicKcal - (0.1 * basicKcal);
           return finalKcal;
       }

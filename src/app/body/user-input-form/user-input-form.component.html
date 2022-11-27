@@ -12,7 +12,7 @@
                 </select>
             </div>
             
-            <div *ngIf="formModel.controls['firstName'].errors && formModel.controls['firstName']?.touched">
+            <div class="alert" *ngIf="formModel.controls['firstName'].errors && formModel.controls['firstName']?.touched">
                 Imię musi składać się z liter.
             </div>
             
@@ -47,10 +47,10 @@
                 <input type="number" placeholder="Podaj swoją wagę 'kg'" step="1" formControlName="weight">
                 <input type="number" placeholder="Podaj swój wzrost 'cm'" step="1" formControlName="height">  
             </div>
-            <div *ngIf="formModel.controls['weight'].errors && formModel.controls['weight']?.touched">
+            <div class="alert" *ngIf="formModel.controls['weight'].errors && formModel.controls['weight']?.touched">
                 Waga musi być pomiędzy 20 a 200.
             </div>
-            <div *ngIf="formModel.controls['height'].errors && formModel.controls['height']?.touched">
+            <div class="alert" *ngIf="formModel.controls['height'].errors && formModel.controls['height']?.touched">
                 Wzrost musi być pomiędzy 140 a 220.
             </div>
 
@@ -64,12 +64,12 @@
                   <option value="hardTraining">Regularnie ćwiczę</option>
                 </select>
             </div>
-            <div *ngIf="formModel.controls['age'].errors && formModel.controls['age']?.touched">
+            <div class="alert" *ngIf="formModel.controls['age'].errors && formModel.controls['age']?.touched">
                 Wiek musi być pomiędzy 10 a 80
             </div>
-        
-            <button type="submit" class="btn" (click)="onSubmit()" appGrayed [isformValid]="formModel.valid" [disabled]="!formModel.valid" [routerLink]="['/diet-planner', firstName]">Stwórz plan dietetyczny</button>
-                
+            <div class="inputs-inline" >
+                <app-create-diet (click)="onSubmit()"  [isformValid]="formModel.valid" [disabled]="!formModel.valid"></app-create-diet>
+            </div>
         </form>
     </div>
 
