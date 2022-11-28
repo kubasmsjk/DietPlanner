@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Meals } from 'src/app/interfaces/meals';
+import { Breakfast, Meals } from 'src/app/interfaces/meals';
 
 import { HttpService } from '../services/http.service';
 
@@ -21,35 +21,50 @@ export class AdminPanelComponent implements OnInit {
     this.getVegeDiet();
     this.getHighProteinDiet();
   }
-
   //PODSTAWOWA
   getBasicDiet(){
     this.httpService.getBasicDiet().subscribe(data=>
       this.basicDiet = data);
   }
-    
-  deleteBasicDiet(){
-    console.log(this.basicDiet[1].Dinner[5].name)
-  }
-  
-  ////VEGE
   getVegeDiet(){
     this.httpService.getVegeDiet().subscribe(data=>
       this.vegeDiet = data);
   }
+  getHighProteinDiet(){
+    this.httpService.getHighProteinDiet().subscribe(data=>
+      this.highProteinDiet = data);
+  }
+    
+  showAllBasic(){
+    for(let i=0;i<this.basicDiet[0].Breakfast.length;i++){
+      console.log(this.basicDiet[0].Breakfast[i])
+    }
+    console.log("obiad")
+    for(let i=0;i<this.basicDiet[1].Dinner.length;i++){
+      console.log(this.basicDiet[1].Dinner[i])
+    }
+  }
+
+  m: Breakfast = {id: 10, name: 'gowno z cukrem', kcal: '290'};
+  v: string = "vegeDiet"
+
+  postMeal(v: string, m: Breakfast){
+    this.httpService.postBreakfast(v, m).subscribe(data=>
+      console.log(data));
+  }
+
+  
     
   deleteVegeDiet(){
   
   }
   
   //WYSOKOBIAŁKOWA
-  getHighProteinDiet(){
-    this.httpService.getHighProteinDiet().subscribe(data=>
-      this.highProteinDiet = data);
-  }
+  
     
   deleteHighProteinDiet(){
     
   }
 
+  
 }

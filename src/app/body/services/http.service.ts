@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
-import { Meals } from "src/app/interfaces/meals";
+import { Breakfast, Meals } from "src/app/interfaces/meals";
 import { map } from "rxjs";
 
 @Injectable()
@@ -14,62 +14,24 @@ export class HttpService{
         return this.http.get<Array<Meals>>("http://localhost:3000/basicDiet").pipe(map(result=>result));
     }
 
-    getBasicDietBreakfast(id:number){
-
-    }
-
-    addBasicDietBreakfast(basciDiet: Meals){
-
-    }
-
-    updateBasicDietBreakfast(basciDiet: Meals){
-
-    }
-
-    deleteBasicDietBreakfast(id: number){
-
-    }
-
     //dieta vege
     getVegeDiet(){
-        return this.http.get<Array<Meals>>("http://localhost:3000/vegeDiet");
+        return this.http.get<Array<Meals>>("http://localhost:3000/vegeDiet").pipe(map(result=>result));
     }
     
-    getVegeDietBreakfast(id:number){
-
+    //Dieta wysokobiałkowa
+    getHighProteinDiet(){
+        return this.http.get<Array<Meals>>("http://localhost:3000/highProteinDiet").pipe(map(result=>result));
     }
 
-    addVegeDietBreakfast(basciDiet: Meals){
-
+    postBreakfast(diettype: string, meal: Breakfast){
+        return this.http.post<Array<Meals>>("http://localhost:3000/"+diettype, meal).pipe(map(result=>result));
     }
 
-    updateVegeDietBreakfast(basciDiet: Meals){
 
+    postBasicDiet(meal: Meals){
+        return this.http.post<Array<Meals>>("http://localhost:3000/basicDiet", meal).pipe(map(result=>result));
     }
 
-    deleteVegeDietBreakfast(id: number){
-
-    }
-
-     //Dieta wysokobiałkowa
-     getHighProteinDiet(){
-        return this.http.get<Array<Meals>>("http://localhost:3000/highProteinDiet");
-    }
-    
-    getHighProteinDietBreakfast(id:number){
-
-    }
-
-    addHighProteinDietBreakfast(basciDiet: Meals){
-
-    }
-
-    updateHighProteinDietBreakfast(basciDiet: Meals){
-
-    }
-
-    deleteHighProteinDietBreakfast(id: number){
-        
-    }
 
 }
