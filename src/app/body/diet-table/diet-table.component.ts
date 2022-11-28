@@ -9,7 +9,7 @@ import { TransitiveDietService } from '../services/transitive-diet.service';
   styleUrls: ['./diet-table.component.css']
 })
 export class DietTableComponent implements OnInit {
-
+  sentence: string = '* w 100g *';
   firstName!: string | null;
   kcal!: number | null;
   finalBreakfastArray: Array<Breakfast> =[];
