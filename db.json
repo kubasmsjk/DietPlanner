@@ -36,6 +36,31 @@
           "id": 7, 
           "name": "Grzanki z boczkiem", 
           "kcal": "209"
+        },
+        {
+          "id": 8, 
+          "name": "Pasta z tuńczyka", 
+          "kcal": "189"
+        },
+        {
+          "id": 9, 
+          "name": "Pasta z awokado", 
+          "kcal": "231"
+        },
+        {
+          "id": 10, 
+          "name": "Chleb z kabanosami", 
+          "kcal": "176"
+        },
+        {
+          "id": 11, 
+          "name": "Placki z szynką i serem", 
+          "kcal": "233"
+        },
+        {
+          "id": 12, 
+          "name": "Tosty z brokułem i serem", 
+          "kcal": "166"
         }
       ]
     },
@@ -76,6 +101,31 @@
           "id": 7, 
           "name": "Kotlet mielony z kaszą", 
           "kcal": "370"
+        },
+        {
+          "id": 8, 
+          "name": "Zapiekanka z indykiem", 
+          "kcal": "365"
+        },
+        {
+          "id": 9, 
+          "name": "Pieczeń rzymska z kaszą", 
+          "kcal": "310"
+        },
+        {
+          "id": 10, 
+          "name": "Białe bolognese", 
+          "kcal": "311"
+        },
+        {
+          "id": 11, 
+          "name": "Kluski francuskie z sosem", 
+          "kcal": "199"
+        },
+        {
+          "id": 12, 
+          "name": "Curry rybne z mango", 
+          "kcal": "289"
         }
       ]
     },
@@ -117,6 +167,42 @@
         {
           "id": 7, 
           "name": "Sałatka z brokuła", 
+          "kcal": "138"   
+        }
+        ,
+        {
+          "id": 8, 
+          "name": "Serowe ziemniaczki", 
+          "kcal": "438"   
+        }
+        ,
+        {
+          "id": 9, 
+          "name": "Krokiety", 
+          "kcal": "199"   
+        }
+        ,
+        {
+          "id": 10, 
+          "name": "Koreczki ze schabem", 
+          "kcal": "213"   
+        }
+        ,
+        {
+          "id": 11, 
+          "name": "Crostini z szynką", 
+          "kcal": "238"   
+        }
+        ,
+        {
+          "id": 12, 
+          "name": "Greckie pierogi z serem", 
+          "kcal": "206"   
+        }
+        ,
+        {
+          "id":13, 
+          "name": "Kisiel gryczany", 
           "kcal": "138"   
         } 
       ]
@@ -160,6 +246,31 @@
           "id": 7, 
           "name": "Grzanki", 
           "kcal": "99"
+        },
+        {
+          "id": 8, 
+          "name": "Twarożek tofu z warzywami", 
+          "kcal": "165"
+        },
+        {
+          "id": 9, 
+          "name": "Szakszuka z botwinki", 
+          "kcal": "123"
+        },
+        {
+          "id": 10, 
+          "name": "Omlet z szparagami", 
+          "kcal": "178"
+        },
+        {
+          "id": 11, 
+          "name": "Tosty z brokułem", 
+          "kcal": "99"
+        },
+        {
+          "id": 12, 
+          "name": "Kanapki z pieczarkami", 
+          "kcal": "89"
         }
       ]
     },
@@ -200,6 +311,31 @@
           "id": 7, 
           "name": "Shakshuka", 
           "kcal": "310"
+        },
+        {
+          "id": 8, 
+          "name": "Peperonata", 
+          "kcal": "202"
+        },
+        {
+          "id": 9, 
+          "name": "Stir-fry z kaszą", 
+          "kcal": "333"
+        },
+        {
+          "id": 10, 
+          "name": "Dynia faszerowana komosą", 
+          "kcal": "169"
+        },
+        {
+          "id": 11, 
+          "name": "Placki z cukinii", 
+          "kcal": "212"
+        },
+        {
+          "id": 12, 
+          "name": "Faszerowany bakłażan", 
+          "kcal": "300"
         }
       ]
     },
@@ -243,6 +379,36 @@
           "name": "Sałatka z brokuła", 
           "kcal": "138"
         }
+        ,
+        {
+          "id": 8, 
+          "name": "Guacamole", 
+          "kcal": "178"
+        }
+        ,
+        {
+          "id": 9, 
+          "name": "Carpaccio z kalarepą", 
+          "kcal": "138"
+        }
+        ,
+        {
+          "id": 10, 
+          "name": "Rollsy z warzywami", 
+          "kcal": "144"
+        }
+        ,
+        {
+          "id": 11, 
+          "name": "Steki z tofu", 
+          "kcal": "188"
+        }
+        ,
+        {
+          "id": 12, 
+          "name": "Wegański tatar", 
+          "kcal": "201"
+        }
       ]
     }
   ],
@@ -284,6 +450,31 @@
           "id": 7, 
           "name": "Burrito z czarną fasolą", 
           "kcal": "299"
+        },
+        {
+          "id": 8, 
+          "name": "Muffiny omletowe", 
+          "kcal": "273"
+        },
+        {
+          "id": 9, 
+          "name": "Kanapki z fasolą i hummusem", 
+          "kcal": "234"
+        },
+        {
+          "id": 10, 
+          "name": "Tosty z pastą z tuńczyka", 
+          "kcal": "282"
+        },
+        {
+          "id": 11, 
+          "name": "Pudding ryżowy", 
+          "kcal": "189"
+        },
+        {
+          "id": 12, 
+          "name": "Zapiekanki z boczkiem", 
+          "kcal": "379"
         }
       ]
     },
@@ -324,6 +515,31 @@
           "id": 7, 
           "name": "Włoski gulasz wołowy", 
           "kcal": "310"
+        },
+        {
+          "id": 8, 
+          "name": "Makaron neapolitana", 
+          "kcal": "285"
+        },
+        {
+          "id": 9, 
+          "name": "Indyk caprese", 
+          "kcal": "331"
+        },
+        {
+          "id": 10, 
+          "name": "Tarta z kiełbasą", 
+          "kcal": "366"
+        },
+        {
+          "id": 11, 
+          "name": "Schab po sztygarsku", 
+          "kcal": "344"
+        },
+        {
+          "id": 12, 
+          "name": "Bibimbap z wołowiną", 
+          "kcal": "354"
         }
       ]
     },
@@ -365,6 +581,36 @@
           "id": 7, 
           "name": "Owsianka wysokobiałkowa", 
           "kcal": "138"
+        }
+        ,
+        {
+          "id": 8, 
+          "name": "Kanapki z kurczakiem z grilla", 
+          "kcal": "238"
+        }
+        ,
+        {
+          "id": 9, 
+          "name": "Gyros z kurczaka", 
+          "kcal": "233"
+        }
+        ,
+        {
+          "id": 10, 
+          "name": "Tatar wołowy", 
+          "kcal": "218"
+        }
+        ,
+        {
+          "id": 11, 
+          "name": "Tacos z krewetkami", 
+          "kcal": "199"
+        }
+        ,
+        {
+          "id": 12, 
+          "name": "Kanapka z pastrami", 
+          "kcal": "178"
         }
       ]
     }
