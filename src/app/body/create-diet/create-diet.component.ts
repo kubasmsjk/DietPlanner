@@ -151,7 +151,7 @@ export class CreateDietComponent implements OnInit, OnDestroy {
         return 1.3;
       }
       case typeOfActivity.MEDIUMTRAINING: {
-        return 1.6;
+        return 1.7;
       }
       case typeOfActivity.HARDTRAINING: {
         return 1.9;
@@ -174,7 +174,7 @@ export class CreateDietComponent implements OnInit, OnDestroy {
           return finalKcal;
         case purposeOfDiet.LOSEWEIGHT: 
           var basicKcal = this.recommendedKcalForMale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
-          var finalKcal = basicKcal - (0.1 * basicKcal);
+          var finalKcal = basicKcal - (0.17 * basicKcal);
           return finalKcal;
       }
     }
@@ -191,7 +191,7 @@ export class CreateDietComponent implements OnInit, OnDestroy {
           return finalKcal;
         case purposeOfDiet.LOSEWEIGHT: 
           var basicKcal = this.recommendedKcalForFemale(formValues.Weight, formValues.Height, formValues.Age, formValues.TrainingExperience);
-          var finalKcal = basicKcal - (0.1 * basicKcal);
+          var finalKcal = basicKcal - (0.18 * basicKcal);
           return finalKcal;
       }
     }
