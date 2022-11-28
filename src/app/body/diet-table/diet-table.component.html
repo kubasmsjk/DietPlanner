@@ -9,15 +9,15 @@
     <tbody>
       <tr>
         <td>Śniadanie</td>
-        <td *ngFor="let breakfast of finalBreakfastArray ">{{ breakfast.name }}<br> {{ breakfast.kcal + " kcal"}}<br><p [innerHTML]=" sentence | transformKcal"></p></td>
+        <td *ngFor="let breakfast of finalBreakfastArray ">{{ breakfast.name }}<br> {{ breakfast.kcal + " kcal"}}<br><p [innerHTML]=" sentence | underlineText"></p></td>
       </tr>
       <tr>
         <td>Obiad</td>
-        <td *ngFor="let dinner of finalDinnerArray ">{{ dinner.name }}<br> {{ dinner.kcal + " kcal"}}<br><p [innerHTML]=" sentence | transformKcal"></p></td>
+        <td *ngFor="let dinner of finalDinnerArray ">{{ dinner.name }}<br> {{ dinner.kcal + " kcal"}}<br><p [innerHTML]=" sentence | underlineText"></p></td>
       </tr>
       <tr>
         <td>Kolacja</td>
-        <td *ngFor="let supper of finalSupperArray ">{{ supper.name }}<br> {{ supper.kcal + " kcal"}}<br><p [innerHTML]=" sentence | transformKcal"></p></td>
+        <td *ngFor="let supper of finalSupperArray ">{{ supper.name }}<br> {{ supper.kcal + " kcal"}}<br><p [innerHTML]=" sentence | underlineText"></p></td>
       </tr>
     </tbody>
   </table>

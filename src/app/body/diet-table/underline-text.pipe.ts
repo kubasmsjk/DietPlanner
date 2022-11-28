@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'transformKcal'
+  name: 'underlineText'
 })
-export class TransformKcalPipe implements PipeTransform {
+export class UnderlineTextPipe implements PipeTransform {
 
   transform(value: string, ...args: unknown[]): string {
     const regex = new RegExp(/([*])(?:(?=(\\?))\2.)*?\1/g, 'gi');;
