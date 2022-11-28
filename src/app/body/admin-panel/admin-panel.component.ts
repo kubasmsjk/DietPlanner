@@ -45,8 +45,6 @@ export class AdminPanelComponent implements OnInit {
     }
   }
 
-  m: Breakfast = {id: 10, name: 'gowno z cukrem', kcal: '290'};
-  v: string = "vegeDiet"
 
   postMeal(v: string, m: Breakfast){
     this.httpService.postBreakfast(v, m).subscribe(data=>
