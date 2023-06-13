@@ -1,6 +1,6 @@
-# AngularDietPlanner
+# DietPlanner
 
-AngularDietPlanner to aplikacja webowa w technologi Angular.  
+DietPlanner to aplikacja webowa w technologi Angular.  
 Projekt powstał w ramach zajęć Aplikacje internetowe oparte o komponenty.
 
 ## Podstawowe funkcje aplikacji: 
