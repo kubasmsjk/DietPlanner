@@ -1,5 +1,19 @@
 # AngularDietPlanner
 
+AngularDietPlanner to aplikacja webowa w technologi Angular.  
+Projekt powstał w ramach zajęć Aplikacje internetowe oparte o komponenty.
+
+## Podstawowe funkcje aplikacji: 
+*	uzupełnianie formularza w celu obliczenia diety,
+*	algoryt obliczający dietę,
+*	wyświetlenie diety,
+*	zczytywanie danych z api.
+
+## Autorzy:
+* Jakub Mieczkowski ([@kubasmsjk]( https://github.com/kubasmsjk))
+* Bartosz Kraśniewski ([@bartekrul]( https://github.com/bartekrul))
+* Marcin Marciniak ([@Leckly]( https://github.com/Leckly))
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
 ## Development server
